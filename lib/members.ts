@@ -42,7 +42,7 @@ export interface Member {
   hobbies: LocalizedText[];
 }
 
-export const members: Member[] = membersJson;
+export const members = membersJson as Member[];
 
 export function getMember(slug: string): Member | undefined {
   return members.find((m) => m.slug === slug);
