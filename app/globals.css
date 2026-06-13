@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper font-sans text-inkc antialiased dark:bg-navy-deep dark:text-paper;
+  }
+}
+
+@layer base {
+  /* Harakat kamaytirilgan rejimda animatsiyalarni o'chirish */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Brend diagonal kesim — o'ng-yuqori burchak */
+  .clip-cut {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 16px) 0,
+      100% 16px,
+      100% 100%,
+      0 100%
+    );
+  }
+}

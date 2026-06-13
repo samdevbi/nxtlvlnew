@@ -1,0 +1,374 @@
+{
+  "nav": {
+    "home": "Bosh sahifa",
+    "about": "Biz haqimizda",
+    "members": "A'zolar",
+    "meetings": "Meetinglar",
+    "activities": "Faoliyatlar",
+    "join": "Qo'shilish"
+  },
+  "footer": {
+    "slogan": "Keyingi bosqichga — birga.",
+    "pages": "Sahifalar",
+    "contact": "Kontakt",
+    "rights": "Barcha huquqlar himoyalangan."
+  },
+  "header": {
+    "menu": "Menyu",
+    "closeMenu": "Menyuni yopish",
+    "toggleTheme": "Rejimni almashtirish"
+  },
+  "join": {
+    "overline": "Bizga qo'shil",
+    "titleStart": "Keyingi a'zo sen bo'lishing",
+    "titleGold": "mumkin.",
+    "subtitle": "A'zolik cheklangan: davra o'lchami — 8. Joy bo'shaganda ariza asosida qo'shilamiz.",
+    "benefits": {
+      "overline": "Nima olasan",
+      "items": {
+        "circle": {
+          "title": "Kuchli davra",
+          "text": "8 nafar o'z ishining ustasi bilan haftalik aloqa"
+        },
+        "knowledge": {
+          "title": "Bilim tizimi",
+          "text": "Kitoblar, taqdimotlar va amaliy muhokamalar"
+        },
+        "growth": {
+          "title": "O'sish hisoboti",
+          "text": "Maqsadlaring uchun davra oldida hisobdorlik"
+        }
+      }
+    },
+    "requirements": {
+      "overline": "Talablar",
+      "items": {
+        "goal": "Aniq maqsadga ega bo'lish",
+        "attend": "Haftalik meetinglarda qatnashish",
+        "read": "Oyiga kamida 1 kitob o'qishga tayyorlik",
+        "respect": "Davra qoidalariga hurmat qilish"
+      }
+    },
+    "process": {
+      "overline": "Jarayon — 3 qadam",
+      "steps": {
+        "form": "Forma to'ldirasan",
+        "cv": "CV yuborasan",
+        "interview": "Suhbatga taklif"
+      }
+    },
+    "form": {
+      "title": "Ariza formasi",
+      "subtitle": "2 daqiqa vaqt oladi",
+      "name": {
+        "label": "Ism familiya",
+        "placeholder": "To'liq ismingiz"
+      },
+      "phone": {
+        "label": "Telefon",
+        "placeholder": "+998 90 000 00 00"
+      },
+      "telegram": {
+        "label": "Telegram",
+        "placeholder": "@username"
+      },
+      "profession": {
+        "label": "Kasbingiz",
+        "placeholder": "Masalan: dizayner"
+      },
+      "reason": {
+        "label": "Nima uchun qo'shilmoqchisiz?",
+        "placeholder": "Qisqacha yozing..."
+      },
+      "cv": "CV yuborish",
+      "cvTelegram": "Telegram orqali",
+      "cvEmail": "Email orqali",
+      "submit": "Arizani yuborish",
+      "note": "Ariza 48 soat ichida ko'rib chiqiladi."
+    }
+  },
+  "activities": {
+    "overline": "Nima qilamiz",
+    "title": "Faoliyatlar",
+    "tabs": {
+      "books": "Kitoblar",
+      "sport": "Sport",
+      "hobby": "Hobbi"
+    },
+    "reading": "Hozir o'qilmoqda",
+    "chapter": "bob",
+    "finished": "O'qilgan",
+    "booksWord": "kitob",
+    "allBooks": "Barcha kitoblar",
+    "sportTitle": "Jismoniy intizom",
+    "sportPhoto": "Sport foto",
+    "sportItems": {
+      "football": {
+        "title": "Futbol",
+        "schedule": "Har shanba · 18:00",
+        "note": "Bunyodkor maydoni"
+      },
+      "running": {
+        "title": "Yugurish",
+        "schedule": "Hafta davomida · 5 km",
+        "note": "Strava'da umumiy challenge"
+      }
+    },
+    "hobbyTitle": "Davra dam ham oladi",
+    "hobbyChips": [
+      "Shaxmat",
+      "Sayohat",
+      "Mafia o'yini",
+      "Plov master"
+    ]
+  },
+  "meetings": {
+    "overline": "Uchrashuvlar",
+    "title": "Meetinglar",
+    "subtitle": "Har yakshanba — yangi mavzu, yangi speaker, yangi daraja.",
+    "next": "Keyingi meeting",
+    "attend": "Qatnashaman",
+    "countdown": {
+      "days": "Kun",
+      "hours": "Soat",
+      "minutes": "Daqiqa",
+      "seconds": "Soniya"
+    },
+    "archive": "Arxiv",
+    "all": "Barcha meetinglar",
+    "back": "Meetinglar",
+    "meeting": "Meeting",
+    "finished": "Yakunlandi",
+    "upcoming": "Kutilmoqda",
+    "attended": "a'zo qatnashdi",
+    "speaker": "Speaker",
+    "topics": "Ko'tarilgan mavzular",
+    "slides": "Taqdimot slaydlari",
+    "pages": "sahifa",
+    "open": "Ochish",
+    "takeaways": "Asosiy xulosalar",
+    "gallery": "Galereya"
+  },
+  "members": {
+    "overline": "Jamoa",
+    "title": "A'zolar",
+    "subtitle": "8 nafar — har biri o'z sohasida, hammasi bitta yo'lda.",
+    "back": "A'zolar",
+    "photo": "Profil foto",
+    "bio": "Bio",
+    "experience": "Tajriba",
+    "skills": "Ko'nikmalar",
+    "results": "Natijalar — clubdagi davrda",
+    "books": "Clubda o'qigan kitoblari",
+    "hobbies": "Sport & hobbi",
+    "education": "Ta'lim",
+    "age": "Yosh",
+    "degrees": {
+      "bachelor": "Bakalavr",
+      "master": "Magistr",
+      "phd": "PhD"
+    }
+  },
+  "about": {
+    "hero": {
+      "overline": "Biz haqimizda",
+      "titleStart": "NXTLVL —",
+      "titleGold": "bu tizim",
+      "text": "2023 yilda oddiy suhbatlardan boshlangan bu yig'ilish, bugunga kelib shaxsiy rivojlanishni kuchaytiradigan katta bir tizimga aylandi."
+    },
+    "mission": {
+      "overline": "Missiya",
+      "text": "Har bir a'zo o'z sohasida kuchli, tizimli va tajribali mutaxassis bo'lishi va hayotda esa sog'lom, chiqishuvchan va kuchli bo'lishi kerak."
+    },
+    "values": {
+      "overline": "Qadriyatlar",
+      "items": {
+        "reading": {
+          "title": "O'qish",
+          "text": "Har hafta kitob, har oy yangi bilim"
+        },
+        "discipline": {
+          "title": "Intizom",
+          "text": "So'z va amal — bir butun"
+        },
+        "circle": {
+          "title": "Davra",
+          "text": "Bir-birini yuqoriga tortadigan jamoa"
+        },
+        "honesty": {
+          "title": "Halollik",
+          "text": "Ochiq gap, halol munosabat"
+        },
+        "sport": {
+          "title": "Sport",
+          "text": "Jismoniy intizom va faollik"
+        },
+        "health": {
+          "title": "Health",
+          "text": "Sog'lom ovqatlanish va hayot tarzi"
+        }
+      }
+    },
+    "history": {
+      "overline": "Qisqa tarix",
+      "items": {
+        "y2023": {
+          "label": "2023",
+          "text": "Oddiy suhbatlar"
+        },
+        "y2024": {
+          "label": "2024",
+          "text": "Kunlik rejalar va kitob"
+        },
+        "y2025": {
+          "label": "2025",
+          "text": "Rejalashtirish, sport, kitob va suhbat"
+        },
+        "y2026": {
+          "label": "2026",
+          "text": "Shaxsiy rivojlanish va networking tizimi"
+        }
+      }
+    },
+    "format": {
+      "overline": "Meeting formati",
+      "title": "Har shanba — 20:00",
+      "steps": {
+        "checkin": {
+          "title": "Check-in",
+          "text": "Haftalik natijalar va holat"
+        },
+        "weeklyAnalysis": {
+          "title": "Haftalik tahlil",
+          "text": "Hafta qanday o'tganini ko'rib chiqish"
+        },
+        "presentation": {
+          "title": "Taqdimot",
+          "text": "Asosiy mavzu bo'yicha taqdimot"
+        },
+        "presentationReview": {
+          "title": "Taqdimot tahlili",
+          "text": "Taqdimot bo'yicha muhokama va fikrlar"
+        },
+        "industryNews": {
+          "title": "Sohadagi yangiliklar",
+          "text": "Sohadan yangiliklar almashinuvi"
+        },
+        "nextGoals": {
+          "title": "Keyingi haftalik maqsadlar",
+          "text": "Keyingi hafta uchun maqsadlar belgilanadi"
+        }
+      }
+    },
+    "rules": {
+      "overline": "Club qoidalari",
+      "items": {
+        "attend": "Har bir meetingga qatnashish majburiy",
+        "sport": "Oyiga 12 marta sport bilan shug'ullanish",
+        "respect": "O'zaro hurmat",
+        "growth": "Doimiy rivojlanish"
+      }
+    }
+  },
+  "home": {
+    "hero": {
+      "overline": "Shaxsiy Rivojlanish va Networking",
+      "titleStart": "Next Level",
+      "titleGold": "Club",
+      "description": "Siz qaysi darajada ekanligingiz muhim emas, bilingki! Muhimi - qaysi darajaga chiqa olishingiz",
+      "join": "Clubga qo'shilish",
+      "details": "Batafsil"
+    },
+    "stats": {
+      "members": "A'zo",
+      "meetings": "Uchrashuv",
+      "sport": "Sport",
+      "presentations": "Taqdimot"
+    },
+    "about": {
+      "overline": "Club haqida",
+      "titleStart": "Tizim. Sport.",
+      "titleGold": "Davra.",
+      "text": "NEXT LEVEL — self development va networking klubi. Har bir a'zo o'z sohasida o'sishni, o'qishni, hayotnini va ishlarini tizimlashtirishni shu bilan birgalikda kuchli davra yig'ishni maqsad qilgan. Natijalar haqida gapirishdan ko'ra, ularni ko'rsatishni afzal ko'ramiz.",
+      "link": "Biz haqimizda"
+    },
+    "directions": {
+      "overline": "Yo'nalishlar",
+      "items": {
+        "meetings": {
+          "title": "Meetinglar",
+          "text": "Haftalik suhbat va taqdimotlar"
+        },
+        "books": {
+          "title": "Kitoblar",
+          "text": "Birga o'qish va muhokama"
+        },
+        "sport": {
+          "title": "Sport",
+          "text": "Jismoniy intizom"
+        },
+        "hobby": {
+          "title": "Tizim",
+          "text": "Plan va tahlil"
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "steps": {
+        "1": "Haftalik reja tuzish",
+        "2": "Kunlik bajarilgan natijalarni guruhga tashlab borish",
+        "3": "Har hafta shanba kuni haftalik natijalarni hisoblash",
+        "4": "Hafta qanday o'tganini tahlil qilish",
+        "5": "O'zgarishlarni tahlil qilish",
+        "6": "Taqdimot",
+        "7": "Taqdimot tahlili",
+        "8": "Kelasi haftadagi maqsadlar",
+        "9": "Suhbat",
+        "10": "Yana qaytadan sikl boshlanadi"
+      }
+    },
+    "nextMeeting": {
+      "overline": "Keyingi meeting",
+      "speaker": "Speaker",
+      "details": "Batafsil"
+    },
+    "members": {
+      "overline": "Jamoa",
+      "title1": "O'z sohasining yetakchilari",
+      "title2": "bitta davrada",
+      "link": "A'zolar bilan tanishish"
+    },
+    "cta": {
+      "titleStart": "Sen ham keyingi bosqichga",
+      "titleGold": "tayyormisan?",
+      "button": "Ariza topshirish"
+    },
+    "oneWay": {
+      "badge": "One way, One Hobby, One Team",
+      "center": "NXTLVL",
+      "items": {
+        "running": {
+          "title": "Running",
+          "subtopic": "Yugurish",
+          "text": "Har hafta birgalikda yuguramiz — intizom, tempo va chegarani kengaytirish."
+        },
+        "hiking": {
+          "title": "Hiking",
+          "subtopic": "Tog'ga chiqish",
+          "text": "Tabiatda yurish, suhbat va yangi energiya. Club a'zolari uchun muntazam hike."
+        },
+        "gym": {
+          "title": "GYM",
+          "subtopic": "Kuch va sog'liq",
+          "text": "Zalda birgalikda mashq — kuch, barqarorlik va o'z ustingizda g'alaba."
+        },
+        "health": {
+          "title": "Health",
+          "subtopic": "Sog'lom ovqatlanish",
+          "text": "To'g'ri ovqatlanish va vitaminlar — energiya, fokus va uzoq muddatli sog'liq uchun asos."
+        }
+      }
+    }
+  }
+}

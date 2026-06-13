@@ -1,0 +1,22 @@
+{
+  "current": {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "note": {
+      "uz": "Kichik odatlar — katta natijalar. Haftada 1 bob o'qiladi.",
+      "en": "Small habits — big results. One chapter read per week."
+    },
+    "progressPercent": 60,
+    "chapter": 12,
+    "totalChapters": 20
+  },
+  "finishedCount": 12,
+  "finished": [
+    { "title": "Deep Work", "author": "Cal Newport" },
+    { "title": "Mindset", "author": "Carol Dweck" },
+    { "title": "Ego is the Enemy", "author": "Ryan Holiday" },
+    { "title": "The Psychology of Money", "author": "Morgan Housel" },
+    { "title": "Zero to One", "author": "Peter Thiel" },
+    { "title": "Why We Sleep", "author": "Matthew Walker" }
+  ]
+}

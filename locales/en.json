@@ -1,0 +1,374 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About us",
+    "members": "Members",
+    "meetings": "Meetings",
+    "activities": "Activities",
+    "join": "Join"
+  },
+  "footer": {
+    "slogan": "To the next level — together.",
+    "pages": "Pages",
+    "contact": "Contact",
+    "rights": "All rights reserved."
+  },
+  "header": {
+    "menu": "Menu",
+    "closeMenu": "Close menu",
+    "toggleTheme": "Toggle theme"
+  },
+  "join": {
+    "overline": "Join us",
+    "titleStart": "The next member could be",
+    "titleGold": "you.",
+    "subtitle": "Membership is limited: the circle size is 8. When a spot opens, we admit based on applications.",
+    "benefits": {
+      "overline": "What you get",
+      "items": {
+        "circle": {
+          "title": "A strong circle",
+          "text": "Weekly contact with 8 masters of their craft"
+        },
+        "knowledge": {
+          "title": "A knowledge system",
+          "text": "Books, presentations and practical discussions"
+        },
+        "growth": {
+          "title": "Growth accountability",
+          "text": "Accountability to the circle for your goals"
+        }
+      }
+    },
+    "requirements": {
+      "overline": "Requirements",
+      "items": {
+        "goal": "Having a clear goal",
+        "attend": "Attending weekly meetings",
+        "read": "Readiness to read at least 1 book a month",
+        "respect": "Respecting the circle's rules"
+      }
+    },
+    "process": {
+      "overline": "Process — 3 steps",
+      "steps": {
+        "form": "Fill in the form",
+        "cv": "Send your CV",
+        "interview": "Interview invite"
+      }
+    },
+    "form": {
+      "title": "Application form",
+      "subtitle": "Takes 2 minutes",
+      "name": {
+        "label": "Full name",
+        "placeholder": "Your full name"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "+998 90 000 00 00"
+      },
+      "telegram": {
+        "label": "Telegram",
+        "placeholder": "@username"
+      },
+      "profession": {
+        "label": "Profession",
+        "placeholder": "E.g. designer"
+      },
+      "reason": {
+        "label": "Why do you want to join?",
+        "placeholder": "Write briefly..."
+      },
+      "cv": "Send CV",
+      "cvTelegram": "Via Telegram",
+      "cvEmail": "Via Email",
+      "submit": "Submit application",
+      "note": "Applications are reviewed within 48 hours."
+    }
+  },
+  "activities": {
+    "overline": "What we do",
+    "title": "Activities",
+    "tabs": {
+      "books": "Books",
+      "sport": "Sport",
+      "hobby": "Hobby"
+    },
+    "reading": "Currently reading",
+    "chapter": "ch.",
+    "finished": "Finished",
+    "booksWord": "books",
+    "allBooks": "All books",
+    "sportTitle": "Physical discipline",
+    "sportPhoto": "Sport photo",
+    "sportItems": {
+      "football": {
+        "title": "Football",
+        "schedule": "Every Saturday · 18:00",
+        "note": "Bunyodkor field"
+      },
+      "running": {
+        "title": "Running",
+        "schedule": "Throughout the week · 5 km",
+        "note": "Shared challenge on Strava"
+      }
+    },
+    "hobbyTitle": "The circle rests too",
+    "hobbyChips": [
+      "Chess",
+      "Travel",
+      "Mafia game",
+      "Plov master"
+    ]
+  },
+  "meetings": {
+    "overline": "Gatherings",
+    "title": "Meetings",
+    "subtitle": "Every Sunday — a new topic, a new speaker, a new level.",
+    "next": "Next meeting",
+    "attend": "I'll attend",
+    "countdown": {
+      "days": "Days",
+      "hours": "Hours",
+      "minutes": "Minutes",
+      "seconds": "Seconds"
+    },
+    "archive": "Archive",
+    "all": "All meetings",
+    "back": "Meetings",
+    "meeting": "Meeting",
+    "finished": "Finished",
+    "upcoming": "Upcoming",
+    "attended": "members attended",
+    "speaker": "Speaker",
+    "topics": "Topics covered",
+    "slides": "Presentation slides",
+    "pages": "pages",
+    "open": "Open",
+    "takeaways": "Key takeaways",
+    "gallery": "Gallery"
+  },
+  "members": {
+    "overline": "The team",
+    "title": "Members",
+    "subtitle": "8 people — each in their own field, all on one path.",
+    "back": "Members",
+    "photo": "Profile photo",
+    "bio": "Bio",
+    "experience": "Experience",
+    "skills": "Skills",
+    "results": "Results — during the club",
+    "books": "Books read in the club",
+    "hobbies": "Sport & hobby",
+    "education": "Education",
+    "age": "Age",
+    "degrees": {
+      "bachelor": "Bachelor's",
+      "master": "Master's",
+      "phd": "PhD"
+    }
+  },
+  "about": {
+    "hero": {
+      "overline": "About us",
+      "titleStart": "NXTLVL —",
+      "titleGold": "a system",
+      "text": "What started in 2023 as simple conversations has grown into a full system that strengthens personal development."
+    },
+    "mission": {
+      "overline": "Mission",
+      "text": "Every member should become a strong, systematic and experienced professional in their field — and in life, healthy, outgoing and resilient."
+    },
+    "values": {
+      "overline": "Values",
+      "items": {
+        "reading": {
+          "title": "Reading",
+          "text": "A book every week, new knowledge every month"
+        },
+        "discipline": {
+          "title": "Discipline",
+          "text": "Word and action — one whole"
+        },
+        "circle": {
+          "title": "Circle",
+          "text": "A team that pulls each other upward"
+        },
+        "honesty": {
+          "title": "Honesty",
+          "text": "Open talk, honest relationships"
+        },
+        "sport": {
+          "title": "Sport",
+          "text": "Physical discipline and activity"
+        },
+        "health": {
+          "title": "Health",
+          "text": "Healthy nutrition and lifestyle"
+        }
+      }
+    },
+    "history": {
+      "overline": "Brief history",
+      "items": {
+        "y2023": {
+          "label": "2023",
+          "text": "Simple conversations"
+        },
+        "y2024": {
+          "label": "2024",
+          "text": "Daily plans and books"
+        },
+        "y2025": {
+          "label": "2025",
+          "text": "Planning, sport, books and conversations"
+        },
+        "y2026": {
+          "label": "2026",
+          "text": "Personal development and networking system"
+        }
+      }
+    },
+    "format": {
+      "overline": "Meeting format",
+      "title": "Every Saturday — 20:00",
+      "steps": {
+        "checkin": {
+          "title": "Check-in",
+          "text": "Weekly results and status"
+        },
+        "weeklyAnalysis": {
+          "title": "Weekly analysis",
+          "text": "Reviewing how the week went"
+        },
+        "presentation": {
+          "title": "Presentation",
+          "text": "Main topic presentation"
+        },
+        "presentationReview": {
+          "title": "Presentation review",
+          "text": "Discussion and feedback on the presentation"
+        },
+        "industryNews": {
+          "title": "Industry news",
+          "text": "Sharing updates from the field"
+        },
+        "nextGoals": {
+          "title": "Next week's goals",
+          "text": "Setting goals for the coming week"
+        }
+      }
+    },
+    "rules": {
+      "overline": "Club rules",
+      "items": {
+        "attend": "Attendance at every meeting is mandatory",
+        "sport": "12 sports sessions per month",
+        "respect": "Mutual respect",
+        "growth": "Continuous development"
+      }
+    }
+  },
+  "home": {
+    "hero": {
+      "overline": "Self development & Networking Club",
+      "titleStart": "Next Level",
+      "titleGold": "Club",
+      "description": "NXTLVL is a private circle of 8 ambitious young men gathering to grow, learn and exchange experience.",
+      "join": "Join the club",
+      "details": "Learn more"
+    },
+    "stats": {
+      "members": "Members",
+      "meetings": "Meetings",
+      "sport": "Sport",
+      "presentations": "Presentations"
+    },
+    "about": {
+      "overline": "About the club",
+      "titleStart": "System. Sport.",
+      "titleGold": "Circle.",
+      "text": "NEXT LEVEL is a self development and networking club. Every member aims to grow in their field, keep learning, systemize their life and work, and build a strong circle together. We prefer showing results rather than talking about them.",
+      "link": "About us"
+    },
+    "directions": {
+      "overline": "Directions",
+      "items": {
+        "meetings": {
+          "title": "Meetings",
+          "text": "Weekly talks and presentations"
+        },
+        "books": {
+          "title": "Books",
+          "text": "Reading and discussing together"
+        },
+        "sport": {
+          "title": "Sport",
+          "text": "Physical discipline"
+        },
+        "hobby": {
+          "title": "System",
+          "text": "Planning and analysis"
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "steps": {
+        "1": "Create a weekly plan",
+        "2": "Share daily completed results with the group",
+        "3": "Calculate weekly results every Saturday",
+        "4": "Analyze how the week went",
+        "5": "Analyze what changed",
+        "6": "Presentation",
+        "7": "Presentation review",
+        "8": "Goals for the coming week",
+        "9": "Discussion",
+        "10": "The cycle starts again"
+      }
+    },
+    "nextMeeting": {
+      "overline": "Next meeting",
+      "speaker": "Speaker",
+      "details": "Details"
+    },
+    "members": {
+      "overline": "The team",
+      "title1": "Leaders of their field",
+      "title2": "in one circle",
+      "link": "Meet the members"
+    },
+    "cta": {
+      "titleStart": "Are you ready for the",
+      "titleGold": "next level?",
+      "button": "Apply now"
+    },
+    "oneWay": {
+      "badge": "One way, One Hobby, One Team",
+      "center": "NXTLVL",
+      "items": {
+        "running": {
+          "title": "Running",
+          "subtopic": "Weekly runs",
+          "text": "We run together every week — discipline, pace, and pushing your limits."
+        },
+        "hiking": {
+          "title": "Hiking",
+          "subtopic": "Mountain trails",
+          "text": "Walks in nature, conversation, and fresh energy. Regular hikes for club members."
+        },
+        "gym": {
+          "title": "GYM",
+          "subtopic": "Strength & health",
+          "text": "Training together at the gym — strength, consistency, and winning against yourself."
+        },
+        "health": {
+          "title": "Health",
+          "subtopic": "Healthy nutrition",
+          "text": "Proper nutrition and vitamins — the foundation for energy, focus, and long-term wellbeing."
+        }
+      }
+    }
+  }
+}

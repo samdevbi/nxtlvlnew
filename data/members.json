@@ -1,0 +1,996 @@
+[
+  {
+    "slug": "samandar-rakhmatillaev",
+    "name": "Samandar Rakhmatillaev",
+    "shortName": "Samandar R.",
+    "initials": "SR",
+    "role": "Software Engineer",
+    "photo": "/members/samandar-rakhmatillaev.jpg",
+    "location": "Busan, South Korea",
+    "telegram": "https://t.me/nxtlvladmin",
+    "email": "samandar@nxtlvl.uz",
+    "bio": {
+      "uz": "5+ yillik tajribaga ega full-stack muhandis. NXTLVL'da tizimli rivojlanish va texnik meetinglarni yo'lga qo'yishda faol. Maqsad — kod yozishdan ko'ra, barqaror va foydali mahsulotlar yaratish.",
+      "en": "Full-stack engineer with 5+ years of experience. Active in NXTLVL's systematic growth and technical meetings. Focused on building stable, useful products — not just writing code."
+    },
+    "experience": [
+      {
+        "title": "Senior Software Engineer — Tech Startup",
+        "period": {
+          "uz": "2023 — hozir",
+          "en": "2023 — present"
+        }
+      },
+      {
+        "title": "Full-Stack Developer — Digital Agency",
+        "period": {
+          "uz": "2021 — 2023",
+          "en": "2021 — 2023"
+        }
+      },
+      {
+        "title": "Junior Developer — IT Company",
+        "period": {
+          "uz": "2019 — 2021",
+          "en": "2019 — 2021"
+        }
+      }
+    ],
+    "skills": [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "System Design",
+      "Git",
+      "English — B2"
+    ],
+    "results": [
+      {
+        "label": {
+          "uz": "2025 · FEV",
+          "en": "2025 · FEB"
+        },
+        "text": {
+          "uz": "NXTLVL haftalik tizimini ishlab chiqishda yetakchi bo'ldi",
+          "en": "Led development of NXTLVL's weekly tracking system"
+        }
+      },
+      {
+        "label": {
+          "uz": "2025 · AVG",
+          "en": "2025 · AUG"
+        },
+        "text": {
+          "uz": "Club uchun ichki dashboard MVP ni 6 haftada ishga tushirdi",
+          "en": "Launched internal club dashboard MVP in 6 weeks"
+        }
+      },
+      {
+        "label": {
+          "uz": "2026 · MAR",
+          "en": "2026 · MAR"
+        },
+        "text": {
+          "uz": "Yugurish bo'yicha 10 km shaxsiy rekordini yangiladi",
+          "en": "Set a new personal 10 km running record"
+        }
+      }
+    ],
+    "books": [
+      "Atomic Habits — James Clear",
+      "The Pragmatic Programmer — Hunt & Thomas",
+      "Deep Work — Cal Newport"
+    ],
+    "hobbies": [
+      {
+        "uz": "Yugurish",
+        "en": "Running"
+      },
+      {
+        "uz": "Shaxmat",
+        "en": "Chess"
+      },
+      {
+        "uz": "Open source",
+        "en": "Open source"
+      },
+      {
+        "uz": "Kitob o'qish",
+        "en": "Reading"
+      }
+    ],
+    "age": 23,
+    "education": [
+      {
+        "degree": "bachelor",
+        "field": "Computer Science",
+        "university": "Inha University in Tashkent",
+        "period": {
+          "uz": "2019 — 2023",
+          "en": "2019 — 2023"
+        }
+      },
+      {
+        "degree": "master",
+        "field": "Computer Science",
+        "university": "Pusan National University",
+        "period": {
+          "uz": "2024 — hozir",
+          "en": "2024 — present"
+        }
+      }
+    ]
+  },
+  {
+    "slug": "azamov-bahovuddin",
+    "name": "Azamov Bahovuddin",
+    "shortName": "Bahovuddin A.",
+    "initials": "AB",
+    "role": "Medicine, Metabolic Doctor",
+    "photo": "/members/azamov-bahovuddin.jpg",
+    "location": "Busan, South Korea",
+    "telegram": "https://t.me/nxtlvladmin",
+    "email": "bahovuddin@nxtlvl.uz",
+    "bio": {
+      "uz": "Metabolizm va uzoq muddatli sog'liqka ixtisoslashgan shifokor. NXTLVL'da Health yo'nalishini yo'lga qo'yuvchi va a'zolarning ovqatlanish hamda hayot tarzini tizimlashtirishga yordam beradi.",
+      "en": "Doctor specializing in metabolism and long-term health. Leads the Health direction at NXTLVL — helping members systemize nutrition and lifestyle habits."
+    },
+    "experience": [
+      {
+        "title": "Metabolic Health Consultant",
+        "period": {
+          "uz": "2022 — hozir",
+          "en": "2022 — present"
+        }
+      },
+      {
+        "title": "Resident Physician — Internal Medicine",
+        "period": {
+          "uz": "2019 — 2022",
+          "en": "2019 — 2022"
+        }
+      },
+      {
+        "title": "Medical Intern — Regional Hospital",
+        "period": {
+          "uz": "2017 — 2019",
+          "en": "2017 — 2019"
+        }
+      }
+    ],
+    "skills": [
+      "Internal Medicine",
+      "Metabolism",
+      "Nutrition Science",
+      "Health Coaching",
+      "Korean — B1",
+      "English — B2"
+    ],
+    "results": [
+      {
+        "label": {
+          "uz": "2025 · APR",
+          "en": "2025 · APR"
+        },
+        "text": {
+          "uz": "Club uchun 8 haftalik Health protokolini ishlab chiqdi",
+          "en": "Designed an 8-week Health protocol for the club"
+        }
+      },
+      {
+        "label": {
+          "uz": "2025 · NOY",
+          "en": "2025 · NOV"
+        },
+        "text": {
+          "uz": "Barcha a'zolar uchun shaxsiy ovqatlanish rejasi tuzdi",
+          "en": "Created personalized nutrition plans for all members"
+        }
+      },
+      {
+        "label": {
+          "uz": "2026 · YAN",
+          "en": "2026 · JAN"
+        },
+        "text": {
+          "uz": "Vitamin va metabolizm bo'yicha club meeting o'tkazdi",
+          "en": "Hosted a club meeting on vitamins and metabolism"
+        }
+      }
+    ],
+    "books": [
+      "Why We Sleep — Matthew Walker",
+      "Outlive — Peter Attia",
+      "The Obesity Code — Jason Fung"
+    ],
+    "hobbies": [
+      {
+        "uz": "Yugurish",
+        "en": "Running"
+      },
+      {
+        "uz": "Sog'lom pishiriq",
+        "en": "Healthy cooking"
+      },
+      {
+        "uz": "Tibbiy maqolalar",
+        "en": "Medical journals"
+      },
+      {
+        "uz": "Yoga",
+        "en": "Yoga"
+      }
+    ],
+    "age": 32,
+    "education": [
+      {
+        "degree": "bachelor",
+        "field": "General Medicine",
+        "university": "Samarkand State Medical Institute",
+        "period": {
+          "uz": "2012 — 2018",
+          "en": "2012 — 2018"
+        }
+      },
+      {
+        "degree": "master",
+        "field": "Internal Medicine",
+        "university": "Pusan National University",
+        "period": {
+          "uz": "2018 — 2021",
+          "en": "2018 — 2021"
+        }
+      },
+      {
+        "degree": "phd",
+        "field": "Metabolic Medicine",
+        "university": "Pusan National University",
+        "period": {
+          "uz": "2021 — 2024",
+          "en": "2021 — 2024"
+        }
+      }
+    ]
+  },
+  {
+    "slug": "ismoilov-akmal",
+    "name": "Ismoilov Akmal",
+    "shortName": "Akmal I.",
+    "initials": "IA",
+    "role": "Politician, International Relations",
+    "photo": "/members/ismoilov-akmal.jpg",
+    "location": "Busan, South Korea",
+    "telegram": "https://t.me/nxtlvladmin",
+    "email": "akmal@nxtlvl.uz",
+    "bio": {
+      "uz": "Siyosat, diplomatiya va xalqaro munosabatlar sohasida ishlaydi. NXTLVL'da muntazam taqdimotlar o'tkazadi va a'zolarni global fikrlash hamda muloqot madaniyatini rivojlantirishga undaydi.",
+      "en": "Works in politics, diplomacy and international relations. Hosts regular presentations at NXTLVL and pushes members toward global thinking and stronger communication culture."
+    },
+    "experience": [
+      {
+        "title": "International Relations Analyst",
+        "period": {
+          "uz": "2021 — hozir",
+          "en": "2021 — present"
+        }
+      },
+      {
+        "title": "Policy Researcher — Think Tank",
+        "period": {
+          "uz": "2018 — 2021",
+          "en": "2018 — 2021"
+        }
+      },
+      {
+        "title": "Diplomatic Assistant — Embassy",
+        "period": {
+          "uz": "2016 — 2018",
+          "en": "2016 — 2018"
+        }
+      }
+    ],
+    "skills": [
+      "International Relations",
+      "Diplomacy",
+      "Public Speaking",
+      "Policy Analysis",
+      "Negotiation",
+      "English — C1",
+      "Korean — B1"
+    ],
+    "results": [
+      {
+        "label": {
+          "uz": "2025 · IYUN",
+          "en": "2025 · JUN"
+        },
+        "text": {
+          "uz": "«Pul psixologiyasi» mavzusida 24-meeting o'tkazdi",
+          "en": "Hosted meeting #24 on financial psychology"
+        }
+      },
+      {
+        "label": {
+          "uz": "2026 · IYUN",
+          "en": "2026 · JUN"
+        },
+        "text": {
+          "uz": "«Siyosat va Diplomatiya» mavzusida 25-meeting speakeri",
+          "en": "Speaker at meeting #25 — Politics and Diplomacy"
+        }
+      },
+      {
+        "label": {
+          "uz": "2026 · FEV",
+          "en": "2026 · FEB"
+        },
+        "text": {
+          "uz": "Koreya-O'zbekiston munosabatlari bo'yicha taqdimot tayyorladi",
+          "en": "Prepared a presentation on Korea–Uzbekistan relations"
+        }
+      }
+    ],
+    "books": [
+      "The Art of War — Sun Tzu",
+      "Diplomacy — Henry Kissinger",
+      "Prisoners of Geography — Tim Marshall"
+    ],
+    "hobbies": [
+      {
+        "uz": "Tarix",
+        "en": "History"
+      },
+      {
+        "uz": "Debat",
+        "en": "Debate"
+      },
+      {
+        "uz": "Sayohat",
+        "en": "Travel"
+      },
+      {
+        "uz": "Hiking",
+        "en": "Hiking"
+      }
+    ],
+    "age": 30,
+    "education": [
+      {
+        "degree": "bachelor",
+        "field": "International Relations",
+        "university": "University of World Economy and Diplomacy",
+        "period": {
+          "uz": "2014 — 2018",
+          "en": "2014 — 2018"
+        }
+      },
+      {
+        "degree": "master",
+        "field": "Diplomacy & International Relations",
+        "university": "Korea University",
+        "period": {
+          "uz": "2019 — 2021",
+          "en": "2019 — 2021"
+        }
+      }
+    ]
+  },
+  {
+    "slug": "javohir-eraliyev",
+    "name": "Javohir Eraliyev",
+    "shortName": "Javohir E.",
+    "initials": "JE",
+    "role": "Ocean Engineering, Civil Engineering",
+    "photo": "/members/javohir-eraliyev.jpg",
+    "location": "Busan, South Korea",
+    "telegram": "https://t.me/nxtlvladmin",
+    "email": "javohir@nxtlvl.uz",
+    "bio": {
+      "uz": "Okean va fuqarolik muhandisligi bo'yicha mutaxassis. Pusan — okean muhandisligi markazi, shu sababli amaliy loyihalar va infratuzilma tajribasiga ega. NXTLVL'da rejalashtirish va tizimli ishlashni o'z sohasiga qo'llaydi.",
+      "en": "Specialist in ocean and civil engineering. Based in Busan — a hub for marine engineering — with hands-on infrastructure project experience. Brings structured planning from NXTLVL into his field."
+    },
+    "experience": [
+      {
+        "title": "Ocean Engineer — Marine Construction Co.",
+        "period": {
+          "uz": "2021 — hozir",
+          "en": "2021 — present"
+        }
+      },
+      {
+        "title": "Civil Engineer — Infrastructure Firm",
+        "period": {
+          "uz": "2018 — 2021",
+          "en": "2018 — 2021"
+        }
+      },
+      {
+        "title": "Junior Engineer — Port Authority",
+        "period": {
+          "uz": "2016 — 2018",
+          "en": "2016 — 2018"
+        }
+      }
+    ],
+    "skills": [
+      "Ocean Engineering",
+      "Civil Engineering",
+      "AutoCAD",
+      "Revit",
+      "Project Management",
+      "Structural Analysis",
+      "Korean — B2"
+    ],
+    "results": [
+      {
+        "label": {
+          "uz": "2025 · SEN",
+          "en": "2025 · SEP"
+        },
+        "text": {
+          "uz": "Port infratuzilmasi loyihasida bosh muhandis yordamchisi bo'ldi",
+          "en": "Assistant lead engineer on a port infrastructure project"
+        }
+      },
+      {
+        "label": {
+          "uz": "2025 · DEK",
+          "en": "2025 · DEC"
+        },
+        "text": {
+          "uz": "Club uchun haftalik reja shabloni tuzdi",
+          "en": "Built the weekly planning template for the club"
+        }
+      },
+      {
+        "label": {
+          "uz": "2026 · APR",
+          "en": "2026 · APR"
+        },
+        "text": {
+          "uz": "Haeundae yo'li bo'yicha 15 km hike tashkil qildi",
+          "en": "Organized a 15 km Haeundae coastal hike"
+        }
+      }
+    ],
+    "books": [
+      "Structures — J.E. Gordon",
+      "The Goal — Eliyahu Goldratt",
+      "Shoe Dog — Phil Knight"
+    ],
+    "hobbies": [
+      {
+        "uz": "Hiking",
+        "en": "Hiking"
+      },
+      {
+        "uz": "Fotografiya",
+        "en": "Photography"
+      },
+      {
+        "uz": "Baliq ovi",
+        "en": "Fishing"
+      },
+      {
+        "uz": "Xaritalar",
+        "en": "Maps & geography"
+      }
+    ],
+    "age": 27,
+    "education": [
+      {
+        "degree": "bachelor",
+        "field": "Ocean Engineering",
+        "university": "Pusan National University",
+        "period": {
+          "uz": "2017 — 2021",
+          "en": "2017 — 2021"
+        }
+      },
+      {
+        "degree": "master",
+        "field": "Civil Engineering",
+        "university": "Pusan National University",
+        "period": {
+          "uz": "2021 — 2023",
+          "en": "2021 — 2023"
+        }
+      }
+    ]
+  },
+  {
+    "slug": "rakhmonkulov-azizbek",
+    "name": "Rakhmonkulov Azizbek",
+    "shortName": "Azizbek R.",
+    "initials": "RA",
+    "role": "Software Engineer, Mobile Photographer",
+    "photo": "/members/rakhmonkulov-azizbek.jpg",
+    "location": "Busan, South Korea",
+    "telegram": "https://t.me/nxtlvladmin",
+    "email": "azizbek.r@nxtlvl.uz",
+    "bio": {
+      "uz": "Dasturiy ta'minot muhandisi va mobil fotograf. Kod va kadr orqali g'oyalarni vizual hikoyaga aylantiradi. NXTLVL meetinglari va club hayotining asosiy suratga oluvchisi.",
+      "en": "Software engineer and mobile photographer. Turns ideas into visual stories through code and frames. Main photographer of NXTLVL meetings and club life."
+    },
+    "experience": [
+      {
+        "title": "Software Engineer — Mobile App Studio",
+        "period": {
+          "uz": "2022 — hozir",
+          "en": "2022 — present"
+        }
+      },
+      {
+        "title": "Freelance Mobile Photographer",
+        "period": {
+          "uz": "2020 — hozir",
+          "en": "2020 — present"
+        }
+      },
+      {
+        "title": "Frontend Developer — Startup",
+        "period": {
+          "uz": "2019 — 2022",
+          "en": "2019 — 2022"
+        }
+      }
+    ],
+    "skills": [
+      "React Native",
+      "TypeScript",
+      "Mobile Photography",
+      "Lightroom",
+      "Video Editing",
+      "UI Design",
+      "English — B2"
+    ],
+    "results": [
+      {
+        "label": {
+          "uz": "2025 · MAR",
+          "en": "2025 · MAR"
+        },
+        "text": {
+          "uz": "NXTLVL vizual brendini (rasm uslubi) ishlab chiqdi",
+          "en": "Developed NXTLVL's visual brand and photo style"
+        }
+      },
+      {
+        "label": {
+          "uz": "2025 · OKT",
+          "en": "2025 · OCT"
+        },
+        "text": {
+          "uz": "Club meetinglari uchun 200+ professional kadr tayyorladi",
+          "en": "Shot 200+ professional frames at club meetings"
+        }
+      },
+      {
+        "label": {
+          "uz": "2026 · FEV",
+          "en": "2026 · FEB"
+        },
+        "text": {
+          "uz": "Mobil ilova prototipini 4 haftada yaratdi",
+          "en": "Built a mobile app prototype in 4 weeks"
+        }
+      }
+    ],
+    "books": [
+      "Steal Like an Artist — Austin Kleon",
+      "Don't Make Me Think — Steve Krug",
+      "Visual Storytelling — Morgan & Williams"
+    ],
+    "hobbies": [
+      {
+        "uz": "Fotografiya",
+        "en": "Photography"
+      },
+      {
+        "uz": "Videografiya",
+        "en": "Videography"
+      },
+      {
+        "uz": "Street photo",
+        "en": "Street photography"
+      },
+      {
+        "uz": "GYM",
+        "en": "Gym"
+      }
+    ],
+    "age": 24,
+    "education": [
+      {
+        "degree": "bachelor",
+        "field": "Computer Science",
+        "university": "Inha University in Tashkent",
+        "period": {
+          "uz": "2019 — 2023",
+          "en": "2019 — 2023"
+        }
+      },
+      {
+        "degree": "master",
+        "field": "Software Engineering",
+        "university": "Dong-Eui University",
+        "period": {
+          "uz": "2024 — hozir",
+          "en": "2024 — present"
+        }
+      }
+    ]
+  },
+  {
+    "slug": "temirov-ilkhom",
+    "name": "Temirov Ilkhom",
+    "shortName": "Ilkhom T.",
+    "initials": "TI",
+    "role": "Businessman",
+    "photo": "/members/temirov-ilkhom.jpg",
+    "location": "Busan, South Korea",
+    "telegram": "https://t.me/nxtlvladmin",
+    "email": "ilkhom@nxtlvl.uz",
+    "bio": {
+      "uz": "Tadbirkor va biznes rivojlantirish bo'yicha mutaxassis. Import-eksport va mahalliy bozorda faol. NXTLVL'da natijaga yo'naltirilgan fikrlash va haftalik hisobot intizomini o'z biznesiga qo'llaydi.",
+      "en": "Entrepreneur and business development specialist. Active in import-export and local markets. Applies NXTLVL's results-driven mindset and weekly reporting discipline to his business."
+    },
+    "experience": [
+      {
+        "title": "Founder — Trading & Distribution",
+        "period": {
+          "uz": "2019 — hozir",
+          "en": "2019 — present"
+        }
+      },
+      {
+        "title": "Sales Director — FMCG Company",
+        "period": {
+          "uz": "2016 — 2019",
+          "en": "2016 — 2019"
+        }
+      },
+      {
+        "title": "Business Development Manager",
+        "period": {
+          "uz": "2013 — 2016",
+          "en": "2013 — 2016"
+        }
+      }
+    ],
+    "skills": [
+      "Business Development",
+      "Sales",
+      "Negotiation",
+      "Import-Export",
+      "Financial Planning",
+      "Korean — B1",
+      "English — B2"
+    ],
+    "results": [
+      {
+        "label": {
+          "uz": "2025 · IYUL",
+          "en": "2025 · JUL"
+        },
+        "text": {
+          "uz": "Biznes daromadini 40% oshirdi — club intizomi orqali",
+          "en": "Grew business revenue 40% through club discipline"
+        }
+      },
+      {
+        "label": {
+          "uz": "2025 · NOY",
+          "en": "2025 · NOV"
+        },
+        "text": {
+          "uz": "Koreya bozorida yangi hamkorlik shartnomasi imzoladi",
+          "en": "Signed a new partnership contract in the Korean market"
+        }
+      },
+      {
+        "label": {
+          "uz": "2026 · YAN",
+          "en": "2026 · JAN"
+        },
+        "text": {
+          "uz": "«Networking san'ati» meetingida speaker bo'ldi",
+          "en": "Speaker at the «Art of Networking» meeting"
+        }
+      }
+    ],
+    "books": [
+      "Zero to One — Peter Thiel",
+      "Never Split the Difference — Chris Voss",
+      "The Lean Startup — Eric Ries"
+    ],
+    "hobbies": [
+      {
+        "uz": "Networking",
+        "en": "Networking"
+      },
+      {
+        "uz": "Golf",
+        "en": "Golf"
+      },
+      {
+        "uz": "Sayohat",
+        "en": "Travel"
+      },
+      {
+        "uz": "Futbol",
+        "en": "Football"
+      }
+    ],
+    "age": 30,
+    "education": [
+      {
+        "degree": "bachelor",
+        "field": "Business Administration",
+        "university": "Westminster International University in Tashkent",
+        "period": {
+          "uz": "2014 — 2018",
+          "en": "2014 — 2018"
+        }
+      },
+      {
+        "degree": "master",
+        "field": "MBA",
+        "university": "Korea University Business School",
+        "period": {
+          "uz": "2020 — 2022",
+          "en": "2020 — 2022"
+        }
+      }
+    ]
+  },
+  {
+    "slug": "askarov-komiljon",
+    "name": "Askarov Komiljon",
+    "shortName": "Komiljon A.",
+    "initials": "AK",
+    "role": "Architectural Engineer",
+    "photo": "/members/askarov-komiljon.jpg",
+    "location": "Busan, South Korea",
+    "telegram": "https://t.me/nxtlvladmin",
+    "email": "komiljon@nxtlvl.uz",
+    "bio": {
+      "uz": "Arxitektura muhandisi — dizayn, konstruksiya va barqaror muhit yaratishga ixtisoslashgan. NXTLVL'da reja, tizim va aniq maqsadlar bilan loyihalarni boshqarishni o'rgangan.",
+      "en": "Architectural engineer focused on design, structure and sustainable built environments. Applies NXTLVL's planning, systems and clear goals to how he manages projects."
+    },
+    "experience": [
+      {
+        "title": "Architectural Engineer — Design Studio",
+        "period": {
+          "uz": "2020 — hozir",
+          "en": "2020 — present"
+        }
+      },
+      {
+        "title": "Junior Architect — Construction Firm",
+        "period": {
+          "uz": "2017 — 2020",
+          "en": "2017 — 2020"
+        }
+      },
+      {
+        "title": "CAD Drafter — Engineering Office",
+        "period": {
+          "uz": "2015 — 2017",
+          "en": "2015 — 2017"
+        }
+      }
+    ],
+    "skills": [
+      "Architectural Design",
+      "Structural Engineering",
+      "AutoCAD",
+      "Revit",
+      "SketchUp",
+      "3D Modeling",
+      "Korean — A2"
+    ],
+    "results": [
+      {
+        "label": {
+          "uz": "2025 · MAY",
+          "en": "2025 · MAY"
+        },
+        "text": {
+          "uz": "Turar-joy loyihasida bosh dizayner yordamchisi lavozimiga ko'tarildi",
+          "en": "Promoted to assistant lead designer on a residential project"
+        }
+      },
+      {
+        "label": {
+          "uz": "2025 · AVG",
+          "en": "2025 · AUG"
+        },
+        "text": {
+          "uz": "Club uchun 3D vizualizatsiya workshop o'tkazdi",
+          "en": "Hosted a 3D visualization workshop for the club"
+        }
+      },
+      {
+        "label": {
+          "uz": "2026 · MAR",
+          "en": "2026 · MAR"
+        },
+        "text": {
+          "uz": "Barqaror arxitektura bo'yicha taqdimot tayyorladi",
+          "en": "Prepared a presentation on sustainable architecture"
+        }
+      }
+    ],
+    "books": [
+      "The Architecture of Happiness — Alain de Botton",
+      "Thinking Architecture — Peter Zumthor",
+      "Form, Space, and Order — Francis Ching"
+    ],
+    "hobbies": [
+      {
+        "uz": "Eskiz",
+        "en": "Sketching"
+      },
+      {
+        "uz": "Muzeylar",
+        "en": "Museums"
+      },
+      {
+        "uz": "Dizayn",
+        "en": "Design"
+      },
+      {
+        "uz": "Yugurish",
+        "en": "Running"
+      }
+    ],
+    "age": 24,
+    "education": [
+      {
+        "degree": "bachelor",
+        "field": "Architectural Engineering",
+        "university": "Tashkent Institute of Architecture and Construction",
+        "period": {
+          "uz": "2018 — 2022",
+          "en": "2018 — 2022"
+        }
+      },
+      {
+        "degree": "master",
+        "field": "Architecture",
+        "university": "Kyungsung University",
+        "period": {
+          "uz": "2023 — hozir",
+          "en": "2023 — present"
+        }
+      }
+    ]
+  },
+  {
+    "slug": "qaxxarov-azizbek",
+    "name": "Qaxxarov Azizbek",
+    "shortName": "Azizbek Q.",
+    "initials": "QA",
+    "role": "AEC Engineer",
+    "photo": "/members/qaxxarov-azizbek.jpg",
+    "location": "Busan, South Korea",
+    "telegram": "https://t.me/nxtlvladmin",
+    "email": "azizbek.q@nxtlvl.uz",
+    "bio": {
+      "uz": "AEC (Architecture, Engineering, Construction) muhandisi — loyihalarni rejalashtirishdan qurilishgacha boshqaradi. BIM va zamonaviy qurilish texnologiyalarida tajribali. NXTLVL tizimini o'z loyihalariga qo'llaydi.",
+      "en": "AEC engineer managing projects from planning through construction. Experienced in BIM and modern building technologies. Applies the NXTLVL system to his own projects."
+    },
+    "experience": [
+      {
+        "title": "AEC Engineer — Construction Group",
+        "period": {
+          "uz": "2021 — hozir",
+          "en": "2021 — present"
+        }
+      },
+      {
+        "title": "BIM Coordinator — Engineering Firm",
+        "period": {
+          "uz": "2018 — 2021",
+          "en": "2018 — 2021"
+        }
+      },
+      {
+        "title": "Site Engineer — Building Project",
+        "period": {
+          "uz": "2016 — 2018",
+          "en": "2016 — 2018"
+        }
+      }
+    ],
+    "skills": [
+      "AEC",
+      "BIM",
+      "Revit",
+      "Construction Management",
+      "Cost Estimation",
+      "Site Supervision",
+      "English — B1",
+      "Korean — B2"
+    ],
+    "results": [
+      {
+        "label": {
+          "uz": "2025 · APR",
+          "en": "2025 · APR"
+        },
+        "text": {
+          "uz": "BIM workflow ni kompaniyada joriy qilishda yetakchi bo'ldi",
+          "en": "Led BIM workflow adoption at his company"
+        }
+      },
+      {
+        "label": {
+          "uz": "2025 · OKT",
+          "en": "2025 · OCT"
+        },
+        "text": {
+          "uz": "Qurilish loyihasini muddatidan oldin topshirdi",
+          "en": "Delivered a construction project ahead of schedule"
+        }
+      },
+      {
+        "label": {
+          "uz": "2026 · FEV",
+          "en": "2026 · FEB"
+        },
+        "text": {
+          "uz": "Oyiga 12 marta sport maqsadini ketma-ket bajardi",
+          "en": "Hit the 12 sports sessions/month goal 3 months in a row"
+        }
+      }
+    ],
+    "books": [
+      "The Phoenix Project — Gene Kim",
+      "Building a StoryBrand — Donald Miller",
+      "Essentialism — Greg McKeown"
+    ],
+    "hobbies": [
+      {
+        "uz": "GYM",
+        "en": "Gym"
+      },
+      {
+        "uz": "Yugurish",
+        "en": "Running"
+      },
+      {
+        "uz": "Qurilish saytlari",
+        "en": "Site visits"
+      },
+      {
+        "uz": "Futbol",
+        "en": "Football"
+      }
+    ],
+    "age": 24,
+    "education": [
+      {
+        "degree": "bachelor",
+        "field": "Civil Engineering",
+        "university": "Turin Polytechnic University in Tashkent",
+        "period": {
+          "uz": "2018 — 2022",
+          "en": "2018 — 2022"
+        }
+      },
+      {
+        "degree": "master",
+        "field": "Construction Engineering",
+        "university": "Dong-A University",
+        "period": {
+          "uz": "2023 — hozir",
+          "en": "2023 — present"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,119 @@
+{
+  "next": {
+    "slug": "siyosat-va-diplomatiya",
+    "number": 25,
+    "title": "Siyosat va Diplomatiya",
+    "iso": "2026-06-13T20:00:00+09:00",
+    "dateLabel": { "uz": "13-iyun, shanba", "en": "June 13, Saturday" },
+    "time": "20:00",
+    "timeRange": "20:00",
+    "location": "유일무이카페, Busan University",
+    "speaker": {
+      "slug": "ismoilov-akmal",
+      "name": "Ismoilov Akmal",
+      "shortName": "Akmal I.",
+      "initials": "IA",
+      "role": "Politician, International Relations"
+    },
+    "topics": [
+      { "uz": "Siyosat va diplomatiya — zamonaviy dunyoda o'z o'rni", "en": "Politics and diplomacy — their place in the modern world" },
+      { "uz": "Xalqaro munosabatlar va muloqot madaniyati", "en": "International relations and communication culture" },
+      { "uz": "Diplomatik yondashuv va muzokaralar san'ati", "en": "Diplomatic approach and the art of negotiation" }
+    ]
+  },
+  "archive": [
+    {
+      "slug": "pul-psixologiyasi",
+      "number": 24,
+      "title": "Pul psixologiyasi",
+      "dateLabel": { "uz": "07-iyun 2026", "en": "Jun 07, 2026" },
+      "dateLong": { "uz": "7-iyun, yakshanba", "en": "June 7, Sunday" },
+      "timeRange": "10:00 — 13:00",
+      "location": "IT Park, Toshkent",
+      "attendance": "8 / 8",
+      "speaker": {
+        "slug": "aziz-karimov",
+        "name": "Aziz Karimov",
+        "shortName": "Aziz K.",
+        "initials": "AK",
+        "role": "Financier"
+      },
+      "summary": { "uz": "Moliyaviy intizom va investitsiya", "en": "Financial discipline and investing" },
+      "topics": [
+        { "uz": "Pulga munosabat — bolalikdan kelgan odatlar", "en": "Attitude to money — habits from childhood" },
+        { "uz": "Daromadning 4 manbai va ularni qurish tartibi", "en": "4 sources of income and how to build them" },
+        { "uz": "Investitsiya: qachon boshlash kerak?", "en": "Investing: when should you start?" },
+        { "uz": "Moliyaviy erkinlik — raqam emas, tizim", "en": "Financial freedom — a system, not a number" }
+      ],
+      "slides": { "pages": 18, "url": "#" },
+      "takeaways": [
+        { "uz": "Pul — vosita. Maqsadni almashtirib qo'ymaslik kerak.", "en": "Money is a tool. Don't let it replace the goal." },
+        { "uz": "Avval jamg'arma fondi, keyin investitsiya.", "en": "Emergency fund first, investing second." },
+        { "uz": "Davradagi 8 kishining moliyaviy odati — sening kelajaging.", "en": "The financial habits of your circle of 8 are your future." }
+      ],
+      "galleryCount": 4
+    },
+    {
+      "slug": "deep-work-amalda",
+      "number": 23,
+      "title": "Deep Work amalda",
+      "dateLabel": { "uz": "31-may 2026", "en": "May 31, 2026" },
+      "dateLong": { "uz": "31-may, yakshanba", "en": "May 31, Sunday" },
+      "timeRange": "10:00 — 13:00",
+      "location": "IT Park, Toshkent",
+      "attendance": "7 / 8",
+      "speaker": {
+        "slug": "jasur-tursunov",
+        "name": "Jasur Tursunov",
+        "shortName": "Jasur T.",
+        "initials": "JT",
+        "role": "Software Engineer"
+      },
+      "summary": { "uz": "Diqqatni boshqarish texnikalari", "en": "Techniques for managing focus" },
+      "topics": [
+        { "uz": "Deep work va shallow work farqi", "en": "Deep work vs shallow work" },
+        { "uz": "90 daqiqalik fokus bloklari amalda", "en": "90-minute focus blocks in practice" },
+        { "uz": "Telefon va bildirishnomalar bilan shartnoma", "en": "A contract with your phone and notifications" },
+        { "uz": "Haftalik chuqur ish rejasini tuzish", "en": "Building a weekly deep work plan" }
+      ],
+      "slides": { "pages": 14, "url": "#" },
+      "takeaways": [
+        { "uz": "Diqqat — yangi valyuta. Uni byudjetlash kerak.", "en": "Attention is the new currency. Budget it." },
+        { "uz": "Eng muhim ish — kunning birinchi 90 daqiqasida.", "en": "The most important work goes in the first 90 minutes." },
+        { "uz": "Rejasiz kun — boshqalarning rejasiga ishlagan kun.", "en": "A day without a plan is a day spent on someone else's plan." }
+      ],
+      "galleryCount": 4
+    },
+    {
+      "slug": "networking-sanati",
+      "number": 22,
+      "title": "Networking san'ati",
+      "dateLabel": { "uz": "17-may 2026", "en": "May 17, 2026" },
+      "dateLong": { "uz": "17-may, yakshanba", "en": "May 17, Sunday" },
+      "timeRange": "10:00 — 13:00",
+      "location": "IT Park, Toshkent",
+      "attendance": "8 / 8",
+      "speaker": {
+        "slug": "bekzod-rahimov",
+        "name": "Bekzod Rahimov",
+        "shortName": "Bekzod R.",
+        "initials": "BR",
+        "role": "Marketing Lead"
+      },
+      "summary": { "uz": "To'g'ri davra qurish strategiyasi", "en": "Strategy for building the right circle" },
+      "topics": [
+        { "uz": "Networking — sotish emas, berish", "en": "Networking is giving, not selling" },
+        { "uz": "Kuchli va kuchsiz aloqalar nazariyasi", "en": "Strong and weak ties theory" },
+        { "uz": "O'zbekistonda professional davra qurish", "en": "Building a professional circle in Uzbekistan" },
+        { "uz": "Follow-up: tanishuvni munosabatga aylantirish", "en": "Follow-up: turning an intro into a relationship" }
+      ],
+      "slides": { "pages": 12, "url": "#" },
+      "takeaways": [
+        { "uz": "Avval qiymat ber — keyin so'ra.", "en": "Give value first — ask later." },
+        { "uz": "Davrang — o'rtacha ko'rsatkiching.", "en": "Your circle is your average." },
+        { "uz": "Har tanishuvdan 48 soat ichida follow-up qil.", "en": "Follow up within 48 hours of every intro." }
+      ],
+      "galleryCount": 4
+    }
+  ]
+}
