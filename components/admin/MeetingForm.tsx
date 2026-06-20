@@ -97,12 +97,13 @@ export function meetingFromApi(doc: Record<string, unknown>): MeetingFormData {
   };
 }
 
-function fillNextDefaults(data: MeetingFormData): MeetingFormData {
+function fillMeetingDefaults(data: MeetingFormData): MeetingFormData {
   const dateLabel = normalizeLocalizedPrimary(data.dateLabel);
   const dateLong = isLocalizedEmpty(data.dateLong) ? dateLabel : normalizeLocalizedPrimary(data.dateLong);
-  const summary = isLocalizedEmpty(data.summary)
-    ? normalizeLocalizedPrimary({ uz: data.title, en: data.title })
-    : normalizeLocalizedPrimary(data.summary);
+  const summary =
+    data.type === "next" && isLocalizedEmpty(data.summary)
+      ? normalizeLocalizedPrimary({ uz: data.title, en: data.title })
+      : normalizeLocalizedPrimary(data.summary);
   const timeRange = data.timeRange.trim() || buildTimeRange(data.time);
 
   return {
@@ -115,7 +116,7 @@ function fillNextDefaults(data: MeetingFormData): MeetingFormData {
 }
 
 export function meetingToApi(data: MeetingFormData, slugReadOnly?: boolean) {
-  const prepared = data.type === "next" ? fillNextDefaults(data) : data;
+  const prepared = fillMeetingDefaults(data);
 
   const body = {
     ...prepared,
