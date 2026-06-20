@@ -38,7 +38,13 @@ const SOCIALS = [
 ];
 
 export default function Footer() {
-  const { t } = useApp();
+  const { t, settings } = useApp();
+
+  const socials = [
+    { name: "Telegram", href: settings.telegram, icon: SOCIALS[0].icon },
+    { name: "Instagram", href: settings.instagram, icon: SOCIALS[1].icon },
+    { name: "LinkedIn", href: settings.linkedin, icon: SOCIALS[2].icon },
+  ];
 
   return (
     <footer className="border-b-2 border-gold bg-navy-deep text-paper">
@@ -77,23 +83,15 @@ export default function Footer() {
             {t("footer.contact")}
           </p>
           <div className="mt-4 flex flex-col gap-2.5 text-sm">
-            <a
-              href="mailto:club@nxtlvl.uz"
-              className="text-paper-line/80 transition-colors hover:text-gold-light"
-            >
-              club@nxtlvl.uz
+            <a href={`mailto:${settings.email}`} className="text-paper-line/80 transition-colors hover:text-gold-light">
+              {settings.email}
             </a>
-            <a
-              href="https://t.me/nxtlvladmin"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-paper-line/80 transition-colors hover:text-gold-light"
-            >
-              @nxtlvladmin
+            <a href={settings.telegram} target="_blank" rel="noopener noreferrer" className="text-paper-line/80 transition-colors hover:text-gold-light">
+              {settings.telegram.replace("https://t.me/", "@")}
             </a>
           </div>
           <div className="mt-5 flex gap-3">
-            {SOCIALS.map((s) => (
+            {socials.map((s) => (
               <a
                 key={s.name}
                 href={s.href}

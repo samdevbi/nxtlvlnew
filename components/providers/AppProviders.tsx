@@ -8,13 +8,11 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import uz from "@/locales/uz.json";
-import en from "@/locales/en.json";
+import uzFallback from "@/locales/uz.json";
+import enFallback from "@/locales/en.json";
 
 type Locale = "uz" | "en";
 type Theme = "light" | "dark";
-
-const messages: Record<Locale, Record<string, unknown>> = { uz, en };
 
 interface AppContextValue {
   locale: Locale;
@@ -22,7 +20,24 @@ interface AppContextValue {
   t: (key: string) => string;
   theme: Theme;
   toggleTheme: () => void;
+  settings: SiteSettings;
 }
+
+export interface SiteSettings {
+  email: string;
+  telegram: string;
+  instagram: string;
+  linkedin: string;
+  heroDesktopUrl?: string;
+  heroMobileUrl?: string;
+}
+
+const defaultSettings: SiteSettings = {
+  email: "club@nxtlvl.uz",
+  telegram: "https://t.me/nxtlvladmin",
+  instagram: "https://instagram.com/nxtlvl.club",
+  linkedin: "https://linkedin.com/company/nxtlvl-club",
+};
 
 const AppContext = createContext<AppContextValue | null>(null);
 
@@ -39,20 +54,48 @@ function resolve(obj: Record<string, unknown>, key: string): string {
   return typeof value === "string" ? value : key;
 }
 
-export function AppProviders({ children }: { children: ReactNode }) {
+export function AppProviders({
+  children,
+  initialMessages,
+  initialSettings,
+}: {
+  children: ReactNode;
+  initialMessages?: { uz: Record<string, unknown>; en: Record<string, unknown> };
+  initialSettings?: SiteSettings;
+}) {
+  const [messages, setMessages] = useState<Record<Locale, Record<string, unknown>>>({
+    uz: initialMessages?.uz ?? (uzFallback as Record<string, unknown>),
+    en: initialMessages?.en ?? (enFallback as Record<string, unknown>),
+  });
   const [locale, setLocaleState] = useState<Locale>("uz");
   const [theme, setTheme] = useState<Theme>("light");
+  const [settings, setSettings] = useState<SiteSettings>(initialSettings ?? defaultSettings);
 
   useEffect(() => {
     const storedLocale = localStorage.getItem("nxtlvl-locale");
     if (storedLocale === "uz" || storedLocale === "en") {
       setLocaleState(storedLocale);
     }
-    // Inline script html'ga klassni allaqachon qo'ygan — state'ni moslaymiz
     setTheme(
       document.documentElement.classList.contains("dark") ? "dark" : "light"
     );
-  }, []);
+
+    if (!initialMessages) {
+      fetch("/api/locales")
+        .then((r) => r.json())
+        .then((data) => {
+          if (data.uz && data.en) setMessages({ uz: data.uz, en: data.en });
+        })
+        .catch(() => {});
+    }
+
+    if (!initialSettings) {
+      fetch("/api/settings")
+        .then((r) => r.json())
+        .then((data) => setSettings({ ...defaultSettings, ...data }))
+        .catch(() => {});
+    }
+  }, [initialMessages, initialSettings]);
 
   const setLocale = useCallback((next: Locale) => {
     setLocaleState(next);
@@ -70,11 +113,11 @@ export function AppProviders({ children }: { children: ReactNode }) {
 
   const t = useCallback(
     (key: string) => resolve(messages[locale], key),
-    [locale]
+    [locale, messages]
   );
 
   return (
-    <AppContext.Provider value={{ locale, setLocale, t, theme, toggleTheme }}>
+    <AppContext.Provider value={{ locale, setLocale, t, theme, toggleTheme, settings }}>
       {children}
     </AppContext.Provider>
   );

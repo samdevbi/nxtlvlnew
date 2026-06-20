@@ -2,11 +2,9 @@
 
 import Link from "next/link";
 import { useApp } from "@/components/providers/AppProviders";
-import membersData from "@/data/members.json";
+import type { Member } from "@/lib/members";
 
-type TeamMember = (typeof membersData)[number];
-
-function TeamMemberCard({ member }: { member: TeamMember }) {
+function TeamMemberCard({ member }: { member: Member }) {
   return (
     <Link
       href={`/members/${member.slug}`}
@@ -30,13 +28,13 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
   );
 }
 
-export default function TeamArc() {
+export default function TeamArc({ members }: { members: Member[] }) {
   const { t } = useApp();
 
   return (
     <section className="overflow-hidden border-t border-paper-line bg-[#f2efe6] py-12 dark:border-navy-line dark:bg-navy-deep lg:py-16">
       <div className="flex snap-x gap-3 overflow-x-auto px-4 pb-3 [scrollbar-width:none] md:justify-center md:overflow-visible [&::-webkit-scrollbar]:hidden">
-        {membersData.map((member) => (
+        {members.map((member) => (
           <TeamMemberCard key={member.slug} member={member} />
         ))}
       </div>

@@ -42,8 +42,11 @@ export interface Member {
   hobbies: LocalizedText[];
 }
 
+/** Static fallback — runtime da data-server ishlatiladi */
 export const members = membersJson as Member[];
 
 export function getMember(slug: string): Member | undefined {
   return members.find((m) => m.slug === slug);
 }
+
+export { fetchMembers, fetchMember } from "@/lib/data-server";

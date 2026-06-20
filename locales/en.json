@@ -280,6 +280,8 @@
       "details": "Learn more"
     },
     "stats": {
+      "period": "In 1 month",
+      "membersPeriod": "On the team",
       "members": "Members",
       "meetings": "Meetings",
       "sport": "Sport",

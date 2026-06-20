@@ -1,0 +1,41 @@
+import Link from "next/link";
+import { connectDB } from "@/lib/db/mongoose";
+import { Member, Meeting, Application } from "@/lib/db/models";
+
+export default async function AdminDashboard() {
+  await connectDB();
+  const [members, meetings, newApps] = await Promise.all([
+    Member.countDocuments(),
+    Meeting.countDocuments(),
+    Application.countDocuments({ status: "new" }),
+  ]);
+
+  return (
+    <div>
+      <h1 className="font-display text-3xl text-gold-light">Dashboard</h1>
+      <div className="mt-8 grid gap-4 sm:grid-cols-3">
+        <div className="rounded-xl border border-navy-line bg-navy-card p-6">
+          <p className="text-3xl font-bold">{members}</p>
+          <p className="mt-1 text-sm text-paper-line">A&apos;zolar</p>
+          <Link href="/admin/members" className="mt-3 inline-block text-xs text-gold-light hover:underline">
+            Boshqarish →
+          </Link>
+        </div>
+        <div className="rounded-xl border border-navy-line bg-navy-card p-6">
+          <p className="text-3xl font-bold">{meetings}</p>
+          <p className="mt-1 text-sm text-paper-line">Uchrashuvlar</p>
+          <Link href="/admin/meetings" className="mt-3 inline-block text-xs text-gold-light hover:underline">
+            Boshqarish →
+          </Link>
+        </div>
+        <div className="rounded-xl border border-navy-line bg-navy-card p-6">
+          <p className="text-3xl font-bold">{newApps}</p>
+          <p className="mt-1 text-sm text-paper-line">Yangi arizalar</p>
+          <Link href="/admin/applications" className="mt-3 inline-block text-xs text-gold-light hover:underline">
+            Ko&apos;rish →
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}

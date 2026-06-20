@@ -36,7 +36,7 @@ export default function MemberProfile({ member }: { member: Member }) {
         <section className="grid gap-6 pb-10 pt-5 lg:grid-cols-[2fr_3fr] lg:items-end lg:gap-12 lg:pb-16">
           <Reveal>
             <div className="clip-cut relative aspect-[4/3] overflow-hidden bg-navy-deep lg:aspect-[4/5]">
-              <MemberPhoto initials={member.initials} size="lg" className="h-full w-full" />
+              <MemberPhoto initials={member.initials} photoUrl={member.photo} size="lg" className="h-full w-full" />
             </div>
           </Reveal>
           <Reveal delay={100}>

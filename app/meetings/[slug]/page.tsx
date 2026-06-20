@@ -1,29 +1,41 @@
 import { notFound } from "next/navigation";
 import MeetingDetail from "@/components/MeetingDetail";
-import { archiveMeetings, getArchiveMeeting, nextMeeting } from "@/lib/meetings";
+import {
+  fetchMeetingBySlug,
+  fetchArchiveMeetings,
+  fetchNextMeeting,
+} from "@/lib/data-server";
+import type { ArchiveMeeting, NextMeeting } from "@/lib/meetings";
 
-export function generateStaticParams() {
-  return [
-    { slug: nextMeeting.slug },
-    ...archiveMeetings.map((meeting) => ({ slug: meeting.slug })),
-  ];
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+  try {
+    const [next, archive] = await Promise.all([
+      fetchNextMeeting(),
+      fetchArchiveMeetings(),
+    ]);
+    const slugs = archive.map((m) => m.slug);
+    if (next) slugs.push(next.slug);
+    return slugs.map((slug) => ({ slug }));
+  } catch {
+    return [];
+  }
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const title =
-    params.slug === nextMeeting.slug
-      ? nextMeeting.title
-      : getArchiveMeeting(params.slug)?.title;
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const meeting = await fetchMeetingBySlug(params.slug);
+  const title = meeting && "title" in meeting ? meeting.title : undefined;
   return { title: title ? `${title} — NXTLVL CLUB` : "NXTLVL CLUB" };
 }
 
-export default function MeetingPage({ params }: { params: { slug: string } }) {
-  if (params.slug === nextMeeting.slug) {
-    return <MeetingDetail kind="next" meeting={nextMeeting} />;
-  }
-
-  const meeting = getArchiveMeeting(params.slug);
+export default async function MeetingPage({ params }: { params: { slug: string } }) {
+  const meeting = await fetchMeetingBySlug(params.slug);
   if (!meeting) notFound();
 
-  return <MeetingDetail kind="archive" meeting={meeting} />;
+  if ("iso" in meeting && meeting.iso) {
+    return <MeetingDetail kind="next" meeting={meeting as NextMeeting} />;
+  }
+
+  return <MeetingDetail kind="archive" meeting={meeting as ArchiveMeeting} />;
 }

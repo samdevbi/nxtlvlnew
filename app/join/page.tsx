@@ -9,9 +9,6 @@ import CutCard from "@/components/CutCard";
 import Reveal from "@/components/Reveal";
 import { useApp } from "@/components/providers/AppProviders";
 
-const TELEGRAM_LINK = "https://t.me/nxtlvladmin";
-const EMAIL = "club@nxtlvl.uz";
-
 const BENEFIT_KEYS = ["circle", "knowledge", "growth"] as const;
 const REQUIREMENT_KEYS = ["goal", "attend", "read", "respect"] as const;
 const STEP_KEYS = ["form", "cv", "interview"] as const;
@@ -31,7 +28,7 @@ const inputClasses =
   "w-full rounded-lg border border-paper-line bg-paper-card px-4 py-3 text-sm text-inkc placeholder:text-inkc-sub/60 transition-colors focus:border-gold focus:outline-none dark:border-navy-line dark:bg-navy-card dark:text-paper dark:placeholder:text-paper-line/50";
 
 export default function JoinPage() {
-  const { t } = useApp();
+  const { t, settings } = useApp();
   const [values, setValues] = useState({
     name: "",
     phone: "",
@@ -39,26 +36,34 @@ export default function JoinPage() {
     profession: "",
     reason: "",
   });
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const setField = (key: keyof typeof values) => (value: string) =>
     setValues((prev) => ({ ...prev, [key]: value }));
 
-  // Backend yo'q — ariza mailto orqali tayyor xat sifatida ochiladi
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    const subject = `NXTLVL ariza — ${values.name}`;
-    const body = [
-      `${t("join.form.name.label")}: ${values.name}`,
-      `${t("join.form.phone.label")}: ${values.phone}`,
-      `${t("join.form.telegram.label")}: ${values.telegram}`,
-      `${t("join.form.profession.label")}: ${values.profession}`,
-      "",
-      `${t("join.form.reason.label")}`,
-      values.reason,
-    ].join("\n");
-    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
+    setSubmitting(true);
+    setSubmitError("");
+    try {
+      const res = await fetch("/api/applications", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Xato");
+      }
+      setSubmitted(true);
+      setValues({ name: "", phone: "", telegram: "", profession: "", reason: "" });
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : "Xato");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -210,7 +215,7 @@ export default function JoinPage() {
                     <Button
                       variant="primary"
                       size="sm"
-                      href={TELEGRAM_LINK}
+                      href={settings.telegram}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -219,7 +224,7 @@ export default function JoinPage() {
                       </svg>
                       {t("join.form.cvTelegram")}
                     </Button>
-                    <Button variant="primary" size="sm" href={`mailto:${EMAIL}`}>
+                    <Button variant="primary" size="sm" href={`mailto:${settings.email}`}>
                       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                         <rect x="3.5" y="5.5" width="17" height="13" rx="2" />
                         <path d="m4.5 7 7.5 6 7.5-6" />
@@ -229,9 +234,17 @@ export default function JoinPage() {
                   </div>
                 </div>
 
-                <Button variant="gold" size="lg" type="submit" className="w-full">
-                  {t("join.form.submit")}
+                <Button variant="gold" size="lg" type="submit" className="w-full" disabled={submitting}>
+                  {submitting ? "..." : t("join.form.submit")}
                 </Button>
+                {submitted && (
+                  <p className="text-center text-sm text-gold-ink dark:text-gold-light">
+                    Ariza qabul qilindi!
+                  </p>
+                )}
+                {submitError && (
+                  <p className="text-center text-sm text-red-500">{submitError}</p>
+                )}
                 <p className="text-center text-xs text-inkc-sub dark:text-paper-line/70">
                   {t("join.form.note")}
                 </p>
