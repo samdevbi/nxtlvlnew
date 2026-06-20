@@ -1,50 +1,56 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AdminField, SaveBar } from "@/components/admin/FormFields";
 
 export default function AdminStatsPage() {
   const [form, setForm] = useState({
-    members: "", meetings: "", sport: "", presentations: "",
-    membersPeriodUz: "", membersPeriodEn: "", periodUz: "", periodEn: "",
+    members: "",
+    meetings: "",
+    sport: "",
+    presentations: "",
+    membersPeriodUz: "",
+    membersPeriodEn: "",
+    periodUz: "",
+    periodEn: "",
   });
   const [msg, setMsg] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("/api/admin/stats").then((r) => r.json()).then(setForm);
+    fetch("/api/admin/stats")
+      .then((r) => r.json())
+      .then(setForm);
   }, []);
 
   const save = async () => {
+    setError("");
+    setMsg("");
     const res = await fetch("/api/admin/stats", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
     });
-    setMsg(res.ok ? "Saqlandi!" : "Xato");
+    if (res.ok) setMsg("Saqlandi!");
+    else setError("Xato");
   };
 
-  const field = (key: keyof typeof form, label: string) => (
-    <div>
-      <label className="text-xs text-paper-line">{label}</label>
-      <input value={form[key]} onChange={(e) => setForm({ ...form, [key]: e.target.value })}
-        className="mt-1 w-full rounded-lg border border-navy-line bg-[#081426] px-3 py-2 text-sm text-paper" />
-    </div>
-  );
+  const set = (key: keyof typeof form) => (v: string) => setForm({ ...form, [key]: v });
 
   return (
     <div className="max-w-lg">
-      <h1 className="font-display text-3xl text-gold-light">Statistika</h1>
-      <div className="mt-6 grid gap-4 sm:grid-cols-2">
-        {field("members", "A'zolar")}
-        {field("meetings", "Uchrashuvlar")}
-        {field("sport", "Sport")}
-        {field("presentations", "Taqdimot")}
-        {field("membersPeriodUz", "A'zolar period (UZ)")}
-        {field("membersPeriodEn", "A'zolar period (EN)")}
-        {field("periodUz", "Period (UZ)")}
-        {field("periodEn", "Period (EN)")}
+      <h1 className="font-display text-2xl text-gold-light sm:text-3xl">Statistika</h1>
+      <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <AdminField label="A'zolar" value={form.members} onChange={set("members")} />
+        <AdminField label="Uchrashuvlar" value={form.meetings} onChange={set("meetings")} />
+        <AdminField label="Sport" value={form.sport} onChange={set("sport")} />
+        <AdminField label="Taqdimot" value={form.presentations} onChange={set("presentations")} />
+        <AdminField label="A'zolar period (UZ)" value={form.membersPeriodUz} onChange={set("membersPeriodUz")} />
+        <AdminField label="A'zolar period (EN)" value={form.membersPeriodEn} onChange={set("membersPeriodEn")} />
+        <AdminField label="Period (UZ)" value={form.periodUz} onChange={set("periodUz")} />
+        <AdminField label="Period (EN)" value={form.periodEn} onChange={set("periodEn")} />
       </div>
-      {msg && <p className="mt-4 text-sm text-gold-light">{msg}</p>}
-      <button type="button" onClick={save} className="mt-4 rounded-lg bg-gold px-6 py-2 text-sm font-semibold text-navy-deep">Saqlash</button>
+      <SaveBar error={error} message={msg} onSave={save} />
     </div>
   );
 }

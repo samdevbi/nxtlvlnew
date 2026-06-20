@@ -40,7 +40,7 @@ export default function ImageUpload({
       <p className="text-xs font-semibold uppercase tracking-wider text-gold-light">{label}</p>
       {value && (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={value} alt="" className="h-32 w-32 rounded-lg object-cover" />
+        <img src={value} alt="" className="h-28 w-28 rounded-lg object-cover sm:h-32 sm:w-32" />
       )}
       <input
         ref={inputRef}
@@ -56,7 +56,7 @@ export default function ImageUpload({
         type="button"
         disabled={loading}
         onClick={() => inputRef.current?.click()}
-        className="rounded-lg border border-navy-line bg-navy-card px-4 py-2 text-sm text-paper hover:border-gold disabled:opacity-50"
+        className="w-full rounded-lg border border-navy-line bg-navy-card px-4 py-3 text-sm text-paper hover:border-gold disabled:opacity-50 sm:w-auto"
       >
         {loading ? "Yuklanmoqda..." : value ? "Rasmni almashtirish" : "Rasm tanlash"}
       </button>

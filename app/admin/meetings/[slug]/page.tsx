@@ -2,6 +2,7 @@
 
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { AdminBackLink } from "@/components/admin/AdminLayout";
 import { SaveBar } from "@/components/admin/FormFields";
 import MeetingForm, { meetingFromApi, meetingToApi, type MeetingFormData } from "@/components/admin/MeetingForm";
 import { adminFetch } from "@/lib/admin-client";
@@ -51,7 +52,8 @@ export default function EditMeetingPage() {
 
   return (
     <div>
-      <h1 className="font-display text-3xl text-gold-light">Uchrashuv: {slug}</h1>
+      <AdminBackLink href="/admin/meetings">Uchrashuvlar ro&apos;yxati</AdminBackLink>
+      <h1 className="break-words font-display text-2xl text-gold-light sm:text-3xl">Uchrashuv: {slug}</h1>
       <div className="mt-6">
         <MeetingForm data={data} onChange={setData} slugReadOnly />
       </div>

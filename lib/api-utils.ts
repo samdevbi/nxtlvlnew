@@ -18,6 +18,14 @@ export function revalidatePublic() {
   revalidatePath("/join");
 }
 
+export function revalidateMembers(memberSlug?: string) {
+  revalidatePublic();
+  revalidatePath("/members", "layout");
+  if (memberSlug) {
+    revalidatePath(`/members/${memberSlug}`);
+  }
+}
+
 export function localesToNested(
   entries: { key: string; uz: string; en: string }[]
 ): { uz: Record<string, unknown>; en: Record<string, unknown> } {

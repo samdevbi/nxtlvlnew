@@ -40,25 +40,9 @@ export function verifyToken(token: string): AdminPayload | null {
 }
 
 export function setAuthCookie(token: string): void {
-  const secure = cookieSecure();
-  // #region agent log
-  fetch("http://127.0.0.1:7793/ingest/dadbd1c7-7069-4b26-b7fc-f993d02028f8", {
-    method: "POST",
-    headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "0951d4" },
-    body: JSON.stringify({
-      sessionId: "0951d4",
-      runId: "post-fix",
-      hypothesisId: "A",
-      location: "lib/auth.ts:setAuthCookie",
-      message: "setting auth cookie",
-      data: { secure, siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "", nodeEnv: process.env.NODE_ENV },
-      timestamp: Date.now(),
-    }),
-  }).catch(() => {});
-  // #endregion
   cookies().set(COOKIE_NAME, token, {
     httpOnly: true,
-    secure,
+    secure: cookieSecure(),
     sameSite: "lax",
     path: "/",
     maxAge: 60 * 60 * 24 * 7,

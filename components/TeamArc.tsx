@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import MemberPhoto from "@/components/MemberPhoto";
 import { useApp } from "@/components/providers/AppProviders";
 import type { Member } from "@/lib/members";
 
@@ -11,11 +12,16 @@ function TeamMemberCard({ member }: { member: Member }) {
       title={member.name}
       className="group block w-[132px] shrink-0 snap-center"
     >
-      <div className="flex h-[196px] w-[132px] flex-col items-center justify-center gap-2.5 overflow-hidden rounded-2xl border border-paper-line/80 bg-navy-deep px-2.5 text-center ring-1 ring-white/10 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-12px_rgba(8,20,38,0.55)] group-hover:ring-2 group-hover:ring-gold dark:border-navy-line">
-        <span className="font-display text-3xl font-bold tracking-[0.18em] text-gold-light">
-          {member.initials}
-        </span>
-        <div>
+      <div className="flex h-[196px] w-[132px] flex-col overflow-hidden rounded-2xl border border-paper-line/80 bg-navy-deep text-center ring-1 ring-white/10 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-12px_rgba(8,20,38,0.55)] group-hover:ring-2 group-hover:ring-gold dark:border-navy-line">
+        <div className="relative min-h-0 flex-1 overflow-hidden">
+          <MemberPhoto
+            initials={member.initials}
+            photoUrl={member.photo}
+            size="sm"
+            className="h-full w-full transition-transform duration-300 group-hover:scale-[1.03]"
+          />
+        </div>
+        <div className="shrink-0 px-2 py-2">
           <p className="text-[10px] font-semibold leading-[13px] text-paper">
             {member.name}
           </p>

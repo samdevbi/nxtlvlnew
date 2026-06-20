@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 import { connectDB } from "@/lib/db/mongoose";
 import { Member } from "@/lib/db/models";
-import { jsonOk, jsonError, revalidatePublic } from "@/lib/api-utils";
+import { jsonOk, jsonError, revalidateMembers } from "@/lib/api-utils";
 import { withAdmin } from "@/lib/admin-api";
 
 export const dynamic = "force-dynamic";
@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
     const exists = await Member.findOne({ slug: body.slug });
     if (exists) return jsonError("Slug mavjud", 409);
     const member = await Member.create(body);
-    revalidatePublic();
+    revalidateMembers(body.slug);
     return jsonOk(member, 201);
   });
 }

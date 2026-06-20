@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 import { connectDB } from "@/lib/db/mongoose";
 import { Member } from "@/lib/db/models";
-import { jsonOk, jsonError, revalidatePublic } from "@/lib/api-utils";
+import { jsonOk, jsonError, revalidateMembers } from "@/lib/api-utils";
 import { withAdmin } from "@/lib/admin-api";
 
 export const dynamic = "force-dynamic";
@@ -25,7 +25,7 @@ export async function PUT(req: NextRequest, { params }: { params: { slug: string
       { returnDocument: "after" }
     ).lean();
     if (!member) return jsonError("Not found", 404);
-    revalidatePublic();
+    revalidateMembers(params.slug);
     return jsonOk(member);
   });
 }
@@ -34,7 +34,7 @@ export async function DELETE(_req: Request, { params }: { params: { slug: string
   return withAdmin(async () => {
     await connectDB();
     await Member.deleteOne({ slug: params.slug });
-    revalidatePublic();
+    revalidateMembers(params.slug);
     return jsonOk({ ok: true });
   });
 }

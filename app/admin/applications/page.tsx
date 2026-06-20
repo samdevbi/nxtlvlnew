@@ -40,25 +40,29 @@ export default function AdminApplicationsPage() {
 
   return (
     <div>
-      <h1 className="font-display text-3xl text-gold-light">Arizalar</h1>
+      <h1 className="font-display text-2xl text-gold-light sm:text-3xl">Arizalar</h1>
       {error && <p className="mt-4 text-sm text-red-400">{error}</p>}
       <div className="mt-6 space-y-3">
         {apps.map((a) => (
-          <div key={a._id} className="rounded-lg border border-navy-line bg-navy-card p-4">
-            <div className="flex flex-wrap items-start justify-between gap-2">
-              <div>
+          <div key={a._id} className="rounded-xl border border-navy-line bg-navy-card p-4">
+            <div className="flex flex-col gap-3">
+              <div className="min-w-0">
                 <p className="font-semibold">{a.name}</p>
-                <p className="text-sm text-paper-line">{a.phone} {a.telegram && `· ${a.telegram}`}</p>
-                {a.profession && <p className="text-xs text-paper-line">{a.profession}</p>}
-                {a.reason && <p className="mt-2 text-sm">{a.reason}</p>}
+                <p className="mt-1 text-sm text-paper-line">
+                  {a.phone} {a.telegram && `· ${a.telegram}`}
+                </p>
+                {a.profession && <p className="mt-1 text-xs text-paper-line">{a.profession}</p>}
+                {a.reason && <p className="mt-2 text-sm leading-relaxed">{a.reason}</p>}
               </div>
               <select
                 value={a.status}
                 onChange={(e) => updateStatus(a._id, e.target.value)}
-                className="rounded border border-navy-line bg-[#081426] px-2 py-1 text-sm text-paper"
+                className="w-full rounded-lg border border-navy-line bg-[#081426] px-3 py-2.5 text-base text-paper sm:max-w-xs sm:text-sm"
               >
                 {STATUSES.map((s) => (
-                  <option key={s} value={s}>{s}</option>
+                  <option key={s} value={s}>
+                    {s}
+                  </option>
                 ))}
               </select>
             </div>

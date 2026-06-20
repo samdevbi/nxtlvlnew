@@ -1,7 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import {
+  AdminActionButton,
+  AdminActionLink,
+  AdminListRow,
+  AdminPageHeader,
+} from "@/components/admin/AdminLayout";
 import { adminFetch } from "@/lib/admin-client";
 
 type Meeting = { slug: string; title: string; type: string; number: number };
@@ -27,25 +32,26 @@ export default function AdminMeetingsPage() {
 
   return (
     <div>
-      <div className="flex items-center justify-between">
-        <h1 className="font-display text-3xl text-gold-light">Uchrashuvlar</h1>
-        <Link href="/admin/meetings/new" className="rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-navy-deep">
-          + Yangi
-        </Link>
-      </div>
+      <AdminPageHeader title="Uchrashuvlar" actionHref="/admin/meetings/new" />
       {error && <p className="mt-4 text-sm text-red-400">{error}</p>}
-      <div className="mt-6 space-y-2">
+      <div className="mt-6 space-y-3">
         {meetings.map((m) => (
-          <div key={m.slug} className="flex items-center justify-between rounded-lg border border-navy-line bg-navy-card px-4 py-3">
-            <div>
-              <span className="mr-2 rounded bg-gold/20 px-2 py-0.5 text-xs text-gold-light">{m.type}</span>
-              <span className="font-semibold">#{m.number} {m.title}</span>
+          <AdminListRow
+            key={m.slug}
+            actions={
+              <>
+                <AdminActionLink href={`/admin/meetings/${m.slug}`}>Tahrirlash</AdminActionLink>
+                <AdminActionButton onClick={() => remove(m.slug)}>O&apos;chirish</AdminActionButton>
+              </>
+            }
+          >
+            <div className="space-y-1">
+              <span className="inline-block rounded bg-gold/20 px-2 py-0.5 text-xs text-gold-light">{m.type}</span>
+              <p className="font-semibold leading-snug">
+                #{m.number} {m.title}
+              </p>
             </div>
-            <div className="flex gap-2">
-              <Link href={`/admin/meetings/${m.slug}`} className="text-sm text-gold-light hover:underline">Tahrirlash</Link>
-              <button type="button" onClick={() => remove(m.slug)} className="text-sm text-red-400 hover:underline">O&apos;chirish</button>
-            </div>
-          </div>
+          </AdminListRow>
         ))}
         {!error && meetings.length === 0 && <p className="text-paper-line">Uchrashuvlar yo&apos;q</p>}
       </div>

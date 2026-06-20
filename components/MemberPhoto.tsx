@@ -5,6 +5,7 @@ type Props = {
   photoUrl?: string;
   className?: string;
   size?: "sm" | "md" | "lg";
+  objectPosition?: "top" | "center";
 };
 
 export default function MemberPhoto({
@@ -12,8 +13,10 @@ export default function MemberPhoto({
   photoUrl,
   className = "h-full w-full",
   size = "md",
+  objectPosition = "top",
 }: Props) {
   const textSize = { sm: "text-3xl", md: "text-4xl", lg: "text-6xl" }[size];
+  const positionClass = objectPosition === "center" ? "object-center" : "object-top";
 
   if (photoUrl) {
     return (
@@ -21,7 +24,7 @@ export default function MemberPhoto({
       <img
         src={photoUrl}
         alt=""
-        className={`${className} object-cover object-top`}
+        className={`${className} object-cover ${positionClass}`}
       />
     );
   }

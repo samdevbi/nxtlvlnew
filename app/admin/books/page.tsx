@@ -55,7 +55,7 @@ export default function AdminBooksPage() {
 
   return (
     <div>
-      <h1 className="font-display text-3xl text-gold-light">Kitoblar</h1>
+      <h1 className="font-display text-2xl text-gold-light sm:text-3xl">Kitoblar</h1>
       <div className="mt-6">
         <BooksForm data={data} onChange={setData} />
       </div>

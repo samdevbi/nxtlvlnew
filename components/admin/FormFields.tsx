@@ -3,12 +3,12 @@
 import type { ReactNode } from "react";
 
 const inputClass =
-  "mt-1 w-full rounded-lg border border-navy-line bg-[#081426] px-3 py-2 text-sm text-paper";
+  "mt-1 w-full rounded-lg border border-navy-line bg-[#081426] px-3 py-2.5 text-base text-paper sm:text-sm";
 const labelClass = "text-xs font-medium uppercase tracking-wider text-paper-line";
 
 export function AdminSection({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <section className="mt-8 rounded-xl border border-navy-line bg-navy-card/40 p-4">
+    <section className="mt-6 rounded-xl border border-navy-line bg-navy-card/40 p-3 sm:mt-8 sm:p-4">
       <h2 className="font-display text-lg text-gold-light">{title}</h2>
       <div className="mt-4 space-y-4">{children}</div>
     </section>
@@ -107,7 +107,7 @@ export function LocalizedField({
   return (
     <div>
       {label ? <p className={labelClass}>{label}</p> : null}
-      <div className={`grid gap-3 sm:grid-cols-2${label ? " mt-2" : ""}`}>
+      <div className={`grid grid-cols-1 gap-3 sm:grid-cols-2${label ? " mt-2" : ""}`}>
         {multiline ? (
           <>
             <AdminTextarea label="O'zbekcha" value={value.uz} onChange={(uz) => onChange({ ...value, uz })} />
@@ -144,17 +144,17 @@ export function StringListEditor({
       <p className={labelClass}>{label}</p>
       <div className="mt-2 space-y-2">
         {items.map((item, i) => (
-          <div key={i} className="flex gap-2">
+          <div key={i} className="flex flex-col gap-2 sm:flex-row">
             <input
               value={item}
               onChange={(e) => update(i, e.target.value)}
               placeholder={placeholder}
-              className={inputClass}
+              className={`${inputClass} mt-0`}
             />
             <button
               type="button"
               onClick={() => onChange(items.filter((_, idx) => idx !== i))}
-              className="shrink-0 rounded-lg border border-red-400/40 px-3 text-xs text-red-300"
+              className="shrink-0 rounded-lg border border-red-400/40 px-3 py-2.5 text-xs text-red-300 sm:py-1"
             >
               O&apos;chir
             </button>
@@ -228,13 +228,13 @@ export function SaveBar({
   label?: string;
 }) {
   return (
-    <div className="mt-8">
+    <div className="sticky bottom-0 -mx-4 mt-8 border-t border-navy-line bg-[#081426]/95 px-4 py-4 backdrop-blur sm:static sm:mx-0 sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 sm:backdrop-blur-none">
       {error && <p className="mb-2 text-sm text-red-400">{error}</p>}
       {message && <p className="mb-2 text-sm text-gold-light">{message}</p>}
       <button
         type="button"
         onClick={onSave}
-        className="rounded-lg bg-gold px-6 py-2 text-sm font-semibold text-navy-deep"
+        className="w-full rounded-lg bg-gold px-6 py-3 text-sm font-semibold text-navy-deep sm:w-auto sm:py-2"
       >
         {label}
       </button>
