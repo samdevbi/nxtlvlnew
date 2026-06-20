@@ -3,6 +3,7 @@
 import Link from "next/link";
 import PhotoPlaceholder from "@/components/PhotoPlaceholder";
 import { useApp } from "@/components/providers/AppProviders";
+import { pickLocalized } from "@/lib/localized";
 import type { ArchiveMeeting } from "@/lib/meetings";
 
 export default function MeetingCard({ meeting }: { meeting: ArchiveMeeting }) {
@@ -16,7 +17,7 @@ export default function MeetingCard({ meeting }: { meeting: ArchiveMeeting }) {
       <div className="relative">
         <PhotoPlaceholder aspect="aspect-[3/1]" silhouette="group" className="rounded-sm" />
         <span className="absolute left-3 top-3 rounded-sm bg-navy-deep/80 px-2 py-1 text-overline font-semibold uppercase tracking-[2px] text-gold-light">
-          {meeting.dateLabel[locale]}
+          {pickLocalized(meeting.dateLabel, locale)}
         </span>
       </div>
       <div className="px-1.5 pb-1.5 pt-4">
@@ -33,7 +34,7 @@ export default function MeetingCard({ meeting }: { meeting: ArchiveMeeting }) {
         </p>
         <div className="mt-1.5 flex items-end justify-between gap-2">
           <p className="text-detail text-inkc-sub dark:text-paper-line/80">
-            {meeting.summary[locale]}
+            {pickLocalized(meeting.summary, locale)}
           </p>
           <svg
             viewBox="0 0 24 24"

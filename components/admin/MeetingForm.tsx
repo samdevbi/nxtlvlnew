@@ -1,14 +1,18 @@
 "use client";
 
+import { useRef } from "react";
+import AdminDateTimePicker from "@/components/admin/AdminDateTimePicker";
+import SpeakerMemberPicker from "@/components/admin/SpeakerMemberPicker";
 import {
   AdminField,
   AdminSection,
   AdminSelect,
-  LocalizedField,
+  LocalizedFieldPrimary,
   LocalizedListEditor,
   type LocalizedValue,
 } from "@/components/admin/FormFields";
-import { normalizeLocalized } from "@/lib/admin-client";
+import { slugify, buildTimeRange } from "@/lib/admin-form-utils";
+import { isLocalizedEmpty, normalizeLocalizedPrimary } from "@/lib/localized";
 
 export type MeetingSpeaker = {
   slug: string;
@@ -39,7 +43,7 @@ export type MeetingFormData = {
 };
 
 export const emptyMeetingForm: MeetingFormData = {
-  type: "archive",
+  type: "next",
   slug: "",
   number: 1,
   title: "",
@@ -65,8 +69,8 @@ export function meetingFromApi(doc: Record<string, unknown>): MeetingFormData {
     number: Number(doc.number ?? 0),
     title: String(doc.title ?? ""),
     iso: String(doc.iso ?? ""),
-    dateLabel: normalizeLocalized(doc.dateLabel as { uz?: string; en?: string }),
-    dateLong: normalizeLocalized(doc.dateLong as { uz?: string; en?: string }),
+    dateLabel: normalizeLocalizedPrimary(doc.dateLabel as { uz?: string; en?: string }),
+    dateLong: normalizeLocalizedPrimary(doc.dateLong as { uz?: string; en?: string }),
     time: String(doc.time ?? ""),
     timeRange: String(doc.timeRange ?? ""),
     location: String(doc.location ?? ""),
@@ -78,31 +82,55 @@ export function meetingFromApi(doc: Record<string, unknown>): MeetingFormData {
       initials: String((doc.speaker as MeetingSpeaker)?.initials ?? ""),
       role: String((doc.speaker as MeetingSpeaker)?.role ?? ""),
     },
-    summary: normalizeLocalized(doc.summary as { uz?: string; en?: string }),
-    topics: ((doc.topics as { uz?: string; en?: string }[]) ?? []).map((t) => normalizeLocalized(t)),
+    summary: normalizeLocalizedPrimary(doc.summary as { uz?: string; en?: string }),
+    topics: ((doc.topics as { uz?: string; en?: string }[]) ?? []).map((t) =>
+      normalizeLocalizedPrimary(t)
+    ),
     slides: {
       pages: Number((doc.slides as MeetingFormData["slides"])?.pages ?? 0),
       url: String((doc.slides as MeetingFormData["slides"])?.url ?? ""),
     },
     takeaways: ((doc.takeaways as { uz?: string; en?: string }[]) ?? []).map((t) =>
-      normalizeLocalized(t)
+      normalizeLocalizedPrimary(t)
     ),
     galleryCount: Number(doc.galleryCount ?? 0),
   };
 }
 
-export function meetingToApi(data: MeetingFormData, slugReadOnly?: boolean) {
-  const body = {
+function fillNextDefaults(data: MeetingFormData): MeetingFormData {
+  const dateLabel = normalizeLocalizedPrimary(data.dateLabel);
+  const dateLong = isLocalizedEmpty(data.dateLong) ? dateLabel : normalizeLocalizedPrimary(data.dateLong);
+  const summary = isLocalizedEmpty(data.summary)
+    ? normalizeLocalizedPrimary({ uz: data.title, en: data.title })
+    : normalizeLocalizedPrimary(data.summary);
+  const timeRange = data.timeRange.trim() || buildTimeRange(data.time);
+
+  return {
     ...data,
-    dateLabel: normalizeLocalized(data.dateLabel),
-    dateLong: normalizeLocalized(data.dateLong),
-    summary: normalizeLocalized(data.summary),
-    topics: data.topics.filter((t) => t.uz.trim() || t.en.trim()).map((t) => normalizeLocalized(t)),
-    takeaways: data.takeaways
-      .filter((t) => t.uz.trim() || t.en.trim())
-      .map((t) => normalizeLocalized(t)),
-    speaker: { ...data.speaker },
+    dateLabel,
+    dateLong,
+    summary,
+    timeRange,
   };
+}
+
+export function meetingToApi(data: MeetingFormData, slugReadOnly?: boolean) {
+  const prepared = data.type === "next" ? fillNextDefaults(data) : data;
+
+  const body = {
+    ...prepared,
+    dateLabel: normalizeLocalizedPrimary(prepared.dateLabel),
+    dateLong: normalizeLocalizedPrimary(prepared.dateLong),
+    summary: normalizeLocalizedPrimary(prepared.summary),
+    topics: prepared.topics
+      .filter((t) => t.uz.trim() || t.en.trim())
+      .map((t) => normalizeLocalizedPrimary(t)),
+    takeaways: prepared.takeaways
+      .filter((t) => t.uz.trim() || t.en.trim())
+      .map((t) => normalizeLocalizedPrimary(t)),
+    speaker: { ...prepared.speaker },
+  };
+
   if (slugReadOnly) {
     const { slug: _slug, ...rest } = body;
     return rest;
@@ -114,20 +142,27 @@ export default function MeetingForm({
   data,
   onChange,
   slugReadOnly,
+  autoSlug = !slugReadOnly,
 }: {
   data: MeetingFormData;
   onChange: (data: MeetingFormData) => void;
   slugReadOnly?: boolean;
+  autoSlug?: boolean;
 }) {
+  const slugTouched = useRef(false);
+  const isNext = data.type === "next";
+
   const set = <K extends keyof MeetingFormData>(key: K, value: MeetingFormData[K]) => {
     onChange({ ...data, [key]: value });
   };
 
-  const setSpeaker = (key: keyof MeetingSpeaker, value: string) => {
-    onChange({ ...data, speaker: { ...data.speaker, [key]: value } });
+  const onTitleChange = (title: string) => {
+    const patch: Partial<MeetingFormData> = { title };
+    if (autoSlug && !slugReadOnly && !slugTouched.current) {
+      patch.slug = slugify(title);
+    }
+    onChange({ ...data, ...patch });
   };
-
-  const isNext = data.type === "next";
 
   return (
     <div className="max-w-3xl">
@@ -143,46 +178,87 @@ export default function MeetingForm({
             ]}
           />
           <AdminField
+            label="Raqam"
+            type="number"
+            value={data.number}
+            onChange={(v) => set("number", Number(v) || 0)}
+            hint="Avtomatik taklif qilinadi, o'zgartirish mumkin"
+          />
+          <div className="sm:col-span-2">
+            <AdminField label="Sarlavha" value={data.title} onChange={onTitleChange} />
+          </div>
+          <AdminField
             label="Slug"
             value={data.slug}
             readOnly={slugReadOnly}
-            onChange={(v) => set("slug", v)}
+            onChange={(v) => {
+              slugTouched.current = true;
+              set("slug", v);
+            }}
+            hint="URL uchun. Sarlavhadan avtomatik yaratiladi"
           />
-          <AdminField label="Raqam" type="number" value={data.number} onChange={(v) => set("number", Number(v) || 0)} />
-          <AdminField label="Sarlavha" value={data.title} onChange={(v) => set("title", v)} />
-          {isNext && (
-            <AdminField label="ISO sana (countdown)" value={data.iso} onChange={(v) => set("iso", v)} />
-          )}
-          <AdminField label="Joy" value={data.location} onChange={(v) => set("location", v)} />
-          {isNext ? (
-            <AdminField label="Vaqt" value={data.time} onChange={(v) => set("time", v)} />
-          ) : null}
-          <AdminField label="Vaqt oralig'i" value={data.timeRange} onChange={(v) => set("timeRange", v)} />
-          {!isNext && (
-            <AdminField label="Qatnashish" value={data.attendance} onChange={(v) => set("attendance", v)} />
-          )}
+          <div className="sm:col-span-2">
+            <AdminField label="Joy" value={data.location} onChange={(v) => set("location", v)} />
+          </div>
         </div>
-        <LocalizedField label="Sana (qisqa)" value={data.dateLabel} onChange={(v) => set("dateLabel", v)} />
+
+        <AdminDateTimePicker
+          iso={data.iso}
+          time={data.time}
+          dateLabel={data.dateLabel}
+          dateLong={data.dateLong}
+          showLongDate={!isNext}
+          onChange={(patch) =>
+            onChange({
+              ...data,
+              iso: patch.iso,
+              time: patch.time,
+              dateLabel: patch.dateLabel,
+              dateLong: patch.dateLong ?? data.dateLong,
+              timeRange: data.timeRange.trim() || buildTimeRange(patch.time),
+            })
+          }
+        />
+
         {!isNext && (
-          <LocalizedField label="Sana (uzun)" value={data.dateLong} onChange={(v) => set("dateLong", v)} />
+          <>
+            <AdminField
+              label="Vaqt oralig'i"
+              value={data.timeRange}
+              onChange={(v) => set("timeRange", v)}
+              hint="Masalan: 10:00 — 13:00"
+            />
+            <AdminField label="Qatnashish" value={data.attendance} onChange={(v) => set("attendance", v)} />
+            <LocalizedFieldPrimary
+              label="Xulosa"
+              value={data.summary}
+              onChange={(v) => set("summary", v)}
+              multiline
+            />
+          </>
         )}
-        {!isNext && (
-          <LocalizedField label="Xulosa" value={data.summary} onChange={(v) => set("summary", v)} multiline />
+
+        {isNext && (
+          <AdminField
+            label="Vaqt oralig'i (ixtiyoriy)"
+            value={data.timeRange}
+            onChange={(v) => set("timeRange", v)}
+            hint="Bo'sh qoldirsangiz boshlanish vaqti ishlatiladi"
+          />
         )}
       </AdminSection>
 
       <AdminSection title="Ma'ruzachi">
-        <div className="grid gap-4 sm:grid-cols-2">
-          <AdminField label="Slug" value={data.speaker.slug} onChange={(v) => setSpeaker("slug", v)} />
-          <AdminField label="Ism" value={data.speaker.name} onChange={(v) => setSpeaker("name", v)} />
-          <AdminField label="Qisqa ism" value={data.speaker.shortName} onChange={(v) => setSpeaker("shortName", v)} />
-          <AdminField label="Bosh harflar" value={data.speaker.initials} onChange={(v) => setSpeaker("initials", v)} />
-          <AdminField label="Rol" value={data.speaker.role} onChange={(v) => setSpeaker("role", v)} />
-        </div>
+        <SpeakerMemberPicker speaker={data.speaker} onChange={(speaker) => set("speaker", speaker)} />
       </AdminSection>
 
       <AdminSection title="Mavzular">
-        <LocalizedListEditor label="Mavzular ro'yxati" items={data.topics} onChange={(v) => set("topics", v)} />
+        <LocalizedListEditor
+          label="Mavzular ro'yxati"
+          items={data.topics}
+          onChange={(v) => set("topics", v)}
+          primaryOnly
+        />
       </AdminSection>
 
       {!isNext && (
@@ -206,7 +282,12 @@ export default function MeetingForm({
               onChange={(v) => set("galleryCount", Number(v) || 0)}
             />
           </div>
-          <LocalizedListEditor label="Asosiy fikrlar" items={data.takeaways} onChange={(v) => set("takeaways", v)} />
+          <LocalizedListEditor
+            label="Asosiy fikrlar"
+            items={data.takeaways}
+            onChange={(v) => set("takeaways", v)}
+            primaryOnly
+          />
         </AdminSection>
       )}
     </div>

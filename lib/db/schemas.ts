@@ -1,7 +1,10 @@
 import { Schema } from "mongoose";
 
 export const LocalizedTextSchema = new Schema(
-  { uz: { type: String, required: true }, en: { type: String, required: true } },
+  {
+    uz: { type: String, required: true, default: "" },
+    en: { type: String, required: false, default: "" },
+  },
   { _id: false }
 );
 

@@ -14,6 +14,7 @@ import OneWaySection from "@/components/OneWaySection";
 import HowItWorks from "@/components/HowItWorks";
 import Countdown from "@/components/Countdown";
 import { useApp } from "@/components/providers/AppProviders";
+import { pickLocalized } from "@/lib/localized";
 import type { NextMeeting } from "@/lib/meetings";
 import type { Member } from "@/lib/members";
 
@@ -73,7 +74,7 @@ function NextMeetingCard({
             <rect x="4" y="5.5" width="16" height="15" rx="2.5" />
             <path d="M4 10h16M8.5 3.5v3.5M15.5 3.5v3.5" />
           </svg>
-          {meeting.dateLabel[locale]} · {meeting.time}
+          {pickLocalized(meeting.dateLabel, locale)} · {meeting.time}
         </span>
         <span className="flex items-center gap-2.5">
           <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0 text-gold-light" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">

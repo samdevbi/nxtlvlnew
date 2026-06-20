@@ -10,6 +10,7 @@ import Countdown from "@/components/Countdown";
 import PhotoPlaceholder from "@/components/PhotoPlaceholder";
 import Reveal from "@/components/Reveal";
 import { useApp } from "@/components/providers/AppProviders";
+import { pickLocalized } from "@/lib/localized";
 import type { ArchiveMeeting, NextMeeting } from "@/lib/meetings";
 
 type Props =
@@ -79,8 +80,8 @@ export default function MeetingDetail(props: Props) {
                   }
                 >
                   {isArchive
-                    ? props.meeting.dateLong[locale]
-                    : props.meeting.dateLabel[locale]}{" "}
+                    ? pickLocalized(props.meeting.dateLong, locale)
+                    : pickLocalized(props.meeting.dateLabel, locale)}{" "}
                   · {meeting.timeRange}
                 </InfoRow>
                 <InfoRow
@@ -175,7 +176,7 @@ export default function MeetingDetail(props: Props) {
               {meeting.topics.map((topic, i) => (
                 <li key={i} className="flex items-start gap-3 text-lead leading-relaxed">
                   <span aria-hidden className="mt-[11px] h-px w-4 shrink-0 bg-gold" />
-                  {topic[locale]}
+                  {pickLocalized(topic, locale)}
                 </li>
               ))}
             </ul>
@@ -229,7 +230,7 @@ export default function MeetingDetail(props: Props) {
                       <span className="font-display text-2xl leading-none text-gold-ink dark:text-gold-light">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <p className="text-base leading-relaxed">{takeaway[locale]}</p>
+                      <p className="text-base leading-relaxed">{pickLocalized(takeaway, locale)}</p>
                     </CutCard>
                   </Reveal>
                 ))}

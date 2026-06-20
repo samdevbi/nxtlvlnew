@@ -1,3 +1,5 @@
+import { normalizeLocalizedPrimary } from "@/lib/localized";
+
 export async function adminFetch<T>(url: string, init?: RequestInit): Promise<T> {
   const res = await fetch(url, init);
   const data = await res.json();
@@ -17,7 +19,7 @@ export function emptyLocalized() {
 }
 
 export function normalizeLocalized(value?: { uz?: string; en?: string } | null) {
-  return { uz: value?.uz ?? "", en: value?.en ?? "" };
+  return normalizeLocalizedPrimary(value);
 }
 
 export function stripEmptyStrings(items: string[]) {

@@ -21,12 +21,14 @@ export function AdminField({
   onChange,
   type = "text",
   readOnly,
+  hint,
 }: {
   label: string;
   value: string | number;
   onChange: (v: string) => void;
   type?: string;
   readOnly?: boolean;
+  hint?: string;
 }) {
   return (
     <div>
@@ -38,6 +40,7 @@ export function AdminField({
         onChange={(e) => onChange(e.target.value)}
         className={`${inputClass}${readOnly ? " opacity-60" : ""}`}
       />
+      {hint && <p className="mt-1 text-xs text-paper-line/70">{hint}</p>}
     </div>
   );
 }
@@ -92,6 +95,44 @@ export function AdminSelect({
 }
 
 export type LocalizedValue = { uz: string; en: string };
+
+export function LocalizedFieldPrimary({
+  label,
+  value,
+  onChange,
+  multiline,
+}: {
+  label: string;
+  value: LocalizedValue;
+  onChange: (v: LocalizedValue) => void;
+  multiline?: boolean;
+}) {
+  const Input = multiline ? AdminTextarea : AdminField;
+  return (
+    <div>
+      {label ? <p className={labelClass}>{label}</p> : null}
+      <div className={label ? "mt-2 space-y-3" : "space-y-3"}>
+        <Input
+          label="O'zbekcha"
+          value={value.uz}
+          onChange={(uz) => onChange({ ...value, uz })}
+        />
+        <details className="rounded-lg border border-navy-line/50 bg-[#081426]/40 px-3 py-2">
+          <summary className="cursor-pointer text-xs text-paper-line hover:text-gold-light">
+            Inglizcha (ixtiyoriy)
+          </summary>
+          <div className="pt-2">
+            <Input
+              label=""
+              value={value.en}
+              onChange={(en) => onChange({ ...value, en })}
+            />
+          </div>
+        </details>
+      </div>
+    </div>
+  );
+}
 
 export function LocalizedField({
   label,
@@ -176,14 +217,18 @@ export function LocalizedListEditor({
   label,
   items,
   onChange,
+  primaryOnly,
 }: {
   label: string;
   items: LocalizedValue[];
   onChange: (items: LocalizedValue[]) => void;
+  primaryOnly?: boolean;
 }) {
   const update = (index: number, value: LocalizedValue) => {
     onChange(items.map((item, i) => (i === index ? value : item)));
   };
+
+  const Field = primaryOnly ? LocalizedFieldPrimary : LocalizedField;
 
   return (
     <div>
@@ -201,7 +246,7 @@ export function LocalizedListEditor({
                 O&apos;chir
               </button>
             </div>
-            <LocalizedField label="" value={item} onChange={(v) => update(i, v)} multiline />
+            <Field label="" value={item} onChange={(v) => update(i, v)} multiline />
           </div>
         ))}
         <button

@@ -7,6 +7,7 @@ import Countdown from "@/components/Countdown";
 import MeetingCard from "@/components/MeetingCard";
 import Reveal from "@/components/Reveal";
 import { useApp } from "@/components/providers/AppProviders";
+import { pickLocalized } from "@/lib/localized";
 import type { ArchiveMeeting, NextMeeting } from "@/lib/meetings";
 
 export default function MeetingsPageClient({
@@ -44,7 +45,7 @@ export default function MeetingsPageClient({
                     <rect x="4" y="5.5" width="16" height="15" rx="2.5" />
                     <path d="M4 10h16M8.5 3.5v3.5M15.5 3.5v3.5" />
                   </svg>
-                  {nextMeeting.dateLabel[locale]} · {nextMeeting.time}
+                  {pickLocalized(nextMeeting.dateLabel, locale)} · {nextMeeting.time}
                 </span>
                 <span className="flex items-center gap-2">
                   <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0 text-gold-light" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
