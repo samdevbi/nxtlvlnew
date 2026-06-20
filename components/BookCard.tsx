@@ -20,7 +20,7 @@ export default function BookCard({ title, author, className = "" }: BookCardProp
         <h3 className="mt-2 font-display text-sm leading-snug text-paper [text-wrap:balance] md:text-base">
           {title}
         </h3>
-        <p className="text-[8px] font-semibold uppercase tracking-[2px] text-gold-light">
+        <p className="text-micro font-semibold uppercase tracking-[2px] text-gold-light">
           {author}
         </p>
       </div>

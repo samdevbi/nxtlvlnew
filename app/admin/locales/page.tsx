@@ -53,7 +53,7 @@ export default function AdminLocalesPage() {
       <div className="mt-6 max-h-[55vh] space-y-3 overflow-y-auto sm:max-h-[60vh]">
         {items.map((item) => (
           <div key={item.key} className="rounded-xl border border-navy-line bg-navy-card p-3">
-            <p className="mb-2 break-all font-mono text-[11px] text-gold-light sm:text-xs">{item.key}</p>
+            <p className="mb-2 break-all font-mono text-xs text-gold-light sm:text-xs">{item.key}</p>
             <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
               <input
                 value={item.uz}

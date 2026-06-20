@@ -62,7 +62,7 @@ export default function MeetingDetail(props: Props) {
         <section className="pb-10 pt-5 lg:pb-14">
           <Reveal>
             <CutCard variant="navy" className="max-w-2xl p-6 lg:p-8">
-              <p className="text-[10px] font-semibold uppercase tracking-[3px] text-gold-light">
+              <p className="text-overline font-semibold uppercase tracking-[3px] text-gold-light">
                 {t("meetings.meeting")} #{meeting.number}
               </p>
               <h1 className="mt-3 font-display text-3xl text-paper md:text-4xl">
@@ -108,7 +108,7 @@ export default function MeetingDetail(props: Props) {
               </div>
 
               {isArchive ? (
-                <span className="mt-6 inline-flex items-center gap-2 rounded-full border border-gold/60 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[2px] text-gold-light">
+                <span className="mt-6 inline-flex items-center gap-2 rounded-full border border-gold/60 px-4 py-1.5 text-overline font-semibold uppercase tracking-[2px] text-gold-light">
                   <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="m5 12.5 4.5 4.5L19 7.5" />
                   </svg>
@@ -147,7 +147,7 @@ export default function MeetingDetail(props: Props) {
               </span>
               <span className="flex-1">
                 <h3 className="text-base font-semibold">{meeting.speaker.name}</h3>
-                <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-[2px] text-gold-ink dark:text-gold-light">
+                <p className="mt-0.5 text-overline font-semibold uppercase tracking-[2px] text-gold-ink dark:text-gold-light">
                   {meeting.speaker.role}
                 </p>
               </span>
@@ -173,7 +173,7 @@ export default function MeetingDetail(props: Props) {
             <SectionLabel>{t("meetings.topics")}</SectionLabel>
             <ul className="mt-4 flex max-w-2xl flex-col gap-3">
               {meeting.topics.map((topic, i) => (
-                <li key={i} className="flex items-start gap-3 text-[15px] leading-relaxed">
+                <li key={i} className="flex items-start gap-3 text-lead leading-relaxed">
                   <span aria-hidden className="mt-[11px] h-px w-4 shrink-0 bg-gold" />
                   {topic[locale]}
                 </li>
@@ -229,7 +229,7 @@ export default function MeetingDetail(props: Props) {
                       <span className="font-display text-2xl leading-none text-gold-ink dark:text-gold-light">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <p className="text-sm leading-relaxed">{takeaway[locale]}</p>
+                      <p className="text-base leading-relaxed">{takeaway[locale]}</p>
                     </CutCard>
                   </Reveal>
                 ))}

@@ -15,7 +15,7 @@ export default function MeetingCard({ meeting }: { meeting: ArchiveMeeting }) {
     >
       <div className="relative">
         <PhotoPlaceholder aspect="aspect-[3/1]" silhouette="group" className="rounded-sm" />
-        <span className="absolute left-3 top-3 rounded-sm bg-navy-deep/80 px-2 py-1 text-[9px] font-semibold uppercase tracking-[2px] text-gold-light">
+        <span className="absolute left-3 top-3 rounded-sm bg-navy-deep/80 px-2 py-1 text-overline font-semibold uppercase tracking-[2px] text-gold-light">
           {meeting.dateLabel[locale]}
         </span>
       </div>
@@ -28,11 +28,11 @@ export default function MeetingCard({ meeting }: { meeting: ArchiveMeeting }) {
             #{meeting.number}
           </span>
         </div>
-        <p className="mt-1.5 text-[10px] font-semibold uppercase tracking-[2px] text-gold-ink dark:text-gold-light">
+        <p className="mt-1.5 text-overline font-semibold uppercase tracking-[2px] text-gold-ink dark:text-gold-light">
           {t("meetings.speaker")} — {meeting.speaker.shortName}
         </p>
         <div className="mt-1.5 flex items-end justify-between gap-2">
-          <p className="text-[13px] text-inkc-sub dark:text-paper-line/80">
+          <p className="text-detail text-inkc-sub dark:text-paper-line/80">
             {meeting.summary[locale]}
           </p>
           <svg

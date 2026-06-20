@@ -78,7 +78,7 @@ export default function PhotoPlaceholder({
       {silhouette === "person" && <PersonSilhouette />}
       {silhouette === "group" && <GroupSilhouette />}
       {label && (
-        <span className="absolute bottom-3 left-4 text-[10px] font-semibold uppercase tracking-[3px] text-gold-light">
+        <span className="absolute bottom-3 left-4 text-overline font-semibold uppercase tracking-[3px] text-gold-light">
           {label}
         </span>
       )}

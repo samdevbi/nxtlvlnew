@@ -63,11 +63,11 @@ function NextMeetingCard({
 
   return (
     <CutCard variant="navy" className={`py-[49px] ${className}`}>
-      <p className="text-[10px] font-semibold uppercase tracking-[3px] text-gold-light">
+      <p className="text-overline font-semibold uppercase tracking-[3px] text-gold-light">
         {t("home.nextMeeting.overline")}
       </p>
       <h3 className="mt-3 font-display text-2xl text-paper">{meeting.title}</h3>
-      <div className="mt-4 flex flex-col gap-2 text-sm text-paper-line/90">
+      <div className="mt-4 flex flex-col gap-2 text-base text-paper-line/90">
         <span className="flex items-center gap-2.5">
           <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0 text-gold-light" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
             <rect x="4" y="5.5" width="16" height="15" rx="2.5" />
@@ -159,7 +159,7 @@ export default function HomePage({
               </h2>
             </Reveal>
             <Reveal delay={120} className="lg:self-center">
-              <p className="text-[15px] leading-relaxed text-inkc-sub dark:text-paper-line/90">{t("home.about.text")}</p>
+              <p className="text-lead leading-relaxed text-inkc-sub dark:text-paper-line/90">{t("home.about.text")}</p>
               <div className="mt-4"><ArrowLink href="/about">{t("home.about.link")}</ArrowLink></div>
             </Reveal>
           </div>
@@ -176,7 +176,7 @@ export default function HomePage({
                     </svg>
                   </span>
                   <h3 className="mt-4 font-sans text-base font-semibold">{t(`home.directions.items.${key}.title`)}</h3>
-                  <p className="mt-1.5 text-[13px] leading-snug text-inkc-sub dark:text-paper-line/80">{t(`home.directions.items.${key}.text`)}</p>
+                  <p className="mt-1.5 text-detail leading-snug text-inkc-sub dark:text-paper-line/80">{t(`home.directions.items.${key}.text`)}</p>
                 </CutCard>
               </Reveal>
             ))}

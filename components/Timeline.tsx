@@ -25,10 +25,10 @@ export default function Timeline({
             aria-hidden
             className="absolute left-0 top-1 h-[11px] w-[11px] rounded-full border-2 border-gold bg-paper dark:bg-navy-deep"
           />
-          <p className="text-[10px] font-semibold uppercase tracking-[3px] text-gold-ink dark:text-gold-light">
+          <p className="text-overline font-semibold uppercase tracking-[3px] text-gold-ink dark:text-gold-light">
             {item.label}
           </p>
-          <div className="mt-1.5 text-sm leading-relaxed text-inkc dark:text-paper">
+          <div className="mt-1.5 text-base leading-relaxed text-inkc dark:text-paper">
             {item.content}
           </div>
         </li>

@@ -19,7 +19,7 @@ export default function OneWaySection() {
       <div className="mx-auto max-w-5xl px-4 py-14 md:px-6 lg:py-20">
         <Reveal>
           <div className="flex justify-center">
-            <span className="rounded-md bg-navy px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-paper dark:bg-navy-card">
+            <span className="rounded-md bg-navy px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-paper dark:bg-navy-card">
               {t("home.oneWay.badge")}
             </span>
           </div>
@@ -47,7 +47,7 @@ export default function OneWaySection() {
 
           <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-navy shadow-lg md:h-[108px] md:w-[108px] dark:bg-navy-card">
-              <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-paper md:text-sm md:tracking-[0.22em]">
+              <span className="text-overline font-bold uppercase tracking-[0.18em] text-paper md:text-sm md:tracking-[0.22em]">
                 {t("home.oneWay.center")}
               </span>
             </div>
@@ -101,10 +101,10 @@ function QuadrantBlock({
       <h3 className="text-lg font-bold text-inkc dark:text-paper md:text-2xl lg:text-3xl">
         {title}
       </h3>
-      <p className="mt-1 text-[11px] font-medium text-inkc-sub md:text-sm dark:text-paper-line/80">
+      <p className="mt-1 text-xs font-medium text-inkc-sub md:text-sm dark:text-paper-line/80">
         {subtopic}
       </p>
-      <p className="mt-2 text-[10px] leading-relaxed text-inkc-sub/90 md:text-[13px] dark:text-paper-line/70">
+      <p className="mt-2 text-overline leading-relaxed text-inkc-sub/90 md:text-detail dark:text-paper-line/70">
         {text}
       </p>
     </div>

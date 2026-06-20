@@ -28,7 +28,7 @@ function StepLabel({ step, centered = false }: { step: number; centered?: boolea
   const { t } = useApp();
   return (
     <p
-      className={`text-[11px] leading-snug text-inkc-sub dark:text-paper-line/80 xl:text-xs ${
+      className={`text-xs leading-snug text-inkc-sub dark:text-paper-line/80 xl:text-xs ${
         centered ? "text-center" : "text-left"
       }`}
     >

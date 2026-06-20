@@ -98,7 +98,7 @@ export default function AdminShell({ children }: { children: ReactNode }) {
         </button>
         <div className="min-w-0 flex-1 px-3 text-center">
           <p className="truncate text-sm font-semibold text-paper">{currentPage}</p>
-          {email && <p className="truncate text-[10px] text-paper-line">{email}</p>}
+          {email && <p className="truncate text-overline text-paper-line">{email}</p>}
         </div>
         <button
           type="button"

@@ -47,7 +47,7 @@ export default function MemberProfile({ member }: { member: Member }) {
           </Reveal>
           <Reveal delay={100}>
             <h1 className="font-display text-4xl md:text-5xl">{member.name}</h1>
-            <p className="mt-2 text-[11px] font-semibold uppercase tracking-[2.5px] text-gold-ink dark:text-gold-light">
+            <p className="mt-2 text-xs font-semibold uppercase tracking-[2.5px] text-gold-ink dark:text-gold-light">
               {member.role}
             </p>
             <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
@@ -94,7 +94,7 @@ export default function MemberProfile({ member }: { member: Member }) {
         <section className="py-8 lg:py-12">
           <Reveal>
             <SectionLabel>{t("members.bio")}</SectionLabel>
-            <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-inkc-sub dark:text-paper-line/90">
+            <p className="mt-4 max-w-2xl text-lead leading-relaxed text-inkc-sub dark:text-paper-line/90">
               {member.bio[locale]}
             </p>
           </Reveal>
@@ -113,7 +113,7 @@ export default function MemberProfile({ member }: { member: Member }) {
                     {t(`members.degrees.${edu.degree}`)}
                   </span>
                   <div className="min-w-0 flex-1 pl-[10px]">
-                    <h3 className="text-sm font-semibold">{edu.field}</h3>
+                    <h3 className="text-base font-semibold">{edu.field}</h3>
                     <p className="mt-0.5 text-xs text-inkc-sub dark:text-paper-line/80">
                       {edu.university}
                     </p>
@@ -138,7 +138,7 @@ export default function MemberProfile({ member }: { member: Member }) {
                 <div className="clip-cut flex items-center gap-3.5 border border-paper-line bg-paper-card px-5 py-4 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-navy/10 dark:border-navy-line dark:bg-navy-card dark:hover:shadow-black/40">
                   <span aria-hidden className="h-2 w-2 shrink-0 rounded-full bg-gold" />
                   <span>
-                    <h3 className="text-sm font-semibold">{exp.title}</h3>
+                    <h3 className="text-base font-semibold">{exp.title}</h3>
                     <p className="mt-0.5 text-xs uppercase tracking-wide text-inkc-sub dark:text-paper-line/80">
                       {exp.period[locale]}
                     </p>
@@ -185,7 +185,7 @@ export default function MemberProfile({ member }: { member: Member }) {
             <SectionLabel>{t("members.books")}</SectionLabel>
             <ul className="mt-4 flex max-w-2xl flex-col gap-3">
               {member.books.map((book) => (
-                <li key={book} className="flex items-center gap-3 text-[15px]">
+                <li key={book} className="flex items-center gap-3 text-lead">
                   <svg
                     viewBox="0 0 24 24"
                     aria-hidden

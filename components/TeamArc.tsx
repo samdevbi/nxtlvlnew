@@ -22,10 +22,10 @@ function TeamMemberCard({ member }: { member: Member }) {
           />
         </div>
         <div className="shrink-0 px-2 py-2">
-          <p className="text-[10px] font-semibold leading-[13px] text-paper">
+          <p className="text-overline font-semibold leading-[13px] text-paper">
             {member.name}
           </p>
-          <p className="mt-1 text-[7.5px] font-semibold uppercase leading-[11px] tracking-[0.12em] text-gold-light">
+          <p className="mt-1 text-micro font-semibold uppercase leading-[12px] tracking-[0.12em] text-gold-light">
             {member.role}
           </p>
         </div>
@@ -46,7 +46,7 @@ export default function TeamArc({ members }: { members: Member[] }) {
       </div>
 
       <div className="mx-auto mt-8 max-w-2xl px-4 text-center md:mt-2">
-        <span className="inline-block rounded-full bg-paper-chip px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-inkc-sub dark:bg-navy-card dark:text-gold-light">
+        <span className="inline-block rounded-full bg-paper-chip px-4 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-inkc-sub dark:bg-navy-card dark:text-gold-light">
           {t("home.members.overline")}
         </span>
         <h2 className="mt-5 text-3xl font-bold leading-[1.1] text-navy dark:text-paper md:text-4xl lg:text-5xl">

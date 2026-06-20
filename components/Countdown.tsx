@@ -60,7 +60,7 @@ export default function Countdown({
           >
             {cell.value}
           </span>
-          <span className="text-[8px] font-semibold uppercase tracking-[2px] text-paper-line/70">
+          <span className="text-micro font-semibold uppercase tracking-[2px] text-paper-line/70">
             {t(cell.key)}
           </span>
         </div>

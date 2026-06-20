@@ -12,7 +12,7 @@ export default function Chip({ children, active = false, className = "", onClick
   return (
     <Tag
       onClick={onClick}
-      className={`inline-flex items-center rounded-full px-3.5 py-1 text-xs font-medium transition-colors ${
+      className={`inline-flex items-center rounded-full px-3.5 py-1 text-sm font-medium transition-colors ${
         active
           ? "bg-gold text-navy"
           : "bg-paper-chip text-inkc-sub hover:text-gold-ink dark:bg-navy-card dark:text-paper-line dark:hover:text-gold-light"

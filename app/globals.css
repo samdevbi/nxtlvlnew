@@ -5,10 +5,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-size: 106.25%;
   }
 
   body {
-    @apply bg-paper font-sans text-inkc antialiased dark:bg-navy-deep dark:text-paper;
+    @apply bg-paper font-sans text-base text-inkc antialiased dark:bg-navy-deep dark:text-paper;
   }
 }
 

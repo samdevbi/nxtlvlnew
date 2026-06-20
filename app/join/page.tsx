@@ -75,13 +75,13 @@ export default function JoinPage() {
         <section className="pb-8 pt-10 lg:pt-16">
           <Reveal>
             <SectionLabel>{t("join.overline")}</SectionLabel>
-            <h1 className="mt-4 max-w-2xl font-display text-[40px] leading-[1.08] md:text-6xl">
+            <h1 className="mt-4 max-w-2xl font-display text-[2.75rem] leading-[1.08] md:text-6xl">
               {t("join.titleStart")}{" "}
               <span className="text-gold-ink dark:text-gold-light">
                 {t("join.titleGold")}
               </span>
             </h1>
-            <p className="mt-4 max-w-md text-[15px] leading-relaxed text-inkc-sub dark:text-paper-line/90">
+            <p className="mt-4 max-w-md text-lead leading-relaxed text-inkc-sub dark:text-paper-line/90">
               {t("join.subtitle")}
             </p>
           </Reveal>
@@ -108,7 +108,7 @@ export default function JoinPage() {
                         <h3 className="text-base font-semibold">
                           {t(`join.benefits.items.${key}.title`)}
                         </h3>
-                        <p className="mt-1 text-[13px] leading-snug text-inkc-sub dark:text-paper-line/80">
+                        <p className="mt-1 text-detail leading-snug text-inkc-sub dark:text-paper-line/80">
                           {t(`join.benefits.items.${key}.text`)}
                         </p>
                       </span>
@@ -124,7 +124,7 @@ export default function JoinPage() {
                 <SectionLabel>{t("join.requirements.overline")}</SectionLabel>
                 <ul className="mt-4 flex flex-col gap-3">
                   {REQUIREMENT_KEYS.map((key) => (
-                    <li key={key} className="flex items-start gap-3 text-[15px] leading-relaxed">
+                    <li key={key} className="flex items-start gap-3 text-lead leading-relaxed">
                       <svg
                         viewBox="0 0 24 24"
                         className="mt-0.5 h-5 w-5 shrink-0 text-gold-ink dark:text-gold-light"
@@ -155,7 +155,7 @@ export default function JoinPage() {
                       <span className="font-display text-2xl leading-none text-gold-ink dark:text-gold-light">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <p className="mt-2.5 text-[13px] font-semibold leading-snug">
+                      <p className="mt-2.5 text-detail font-semibold leading-snug">
                         {t(`join.process.steps.${key}`)}
                       </p>
                     </CutCard>
@@ -179,7 +179,7 @@ export default function JoinPage() {
               <div className="mt-6 flex flex-col gap-5">
                 {FIELD_KEYS.map((key) => (
                   <label key={key} className="block">
-                    <span className="mb-1.5 block text-[10px] font-semibold uppercase tracking-[2px] text-inkc-sub dark:text-paper-line/70">
+                    <span className="mb-1.5 block text-overline font-semibold uppercase tracking-[2px] text-inkc-sub dark:text-paper-line/70">
                       {t(`join.form.${key}.label`)}
                     </span>
                     <input
@@ -194,7 +194,7 @@ export default function JoinPage() {
                 ))}
 
                 <label className="block">
-                  <span className="mb-1.5 block text-[10px] font-semibold uppercase tracking-[2px] text-inkc-sub dark:text-paper-line/70">
+                  <span className="mb-1.5 block text-overline font-semibold uppercase tracking-[2px] text-inkc-sub dark:text-paper-line/70">
                     {t("join.form.reason.label")}
                   </span>
                   <textarea
@@ -208,7 +208,7 @@ export default function JoinPage() {
 
                 {/* CV yuborish */}
                 <div>
-                  <span className="mb-2 block text-[10px] font-semibold uppercase tracking-[2px] text-inkc-sub dark:text-paper-line/70">
+                  <span className="mb-2 block text-overline font-semibold uppercase tracking-[2px] text-inkc-sub dark:text-paper-line/70">
                     {t("join.form.cv")}
                   </span>
                   <div className="flex flex-wrap gap-3">

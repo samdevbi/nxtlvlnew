@@ -16,7 +16,7 @@ const NAV_LINKS = [
 function LocaleSwitch() {
   const { locale, setLocale } = useApp();
   return (
-    <div className="flex items-center rounded-full bg-paper-chip p-0.5 text-xs font-semibold dark:bg-navy-card">
+    <div className="flex items-center rounded-full bg-paper-chip p-0.5 text-sm font-semibold dark:bg-navy-card">
       {(["uz", "en"] as const).map((l) => (
         <button
           key={l}
@@ -88,7 +88,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-inkc-sub transition-colors hover:text-gold-ink dark:text-paper-line dark:hover:text-gold-light"
+              className="text-base text-inkc-sub transition-colors hover:text-gold-ink dark:text-paper-line dark:hover:text-gold-light"
             >
               {t(link.key)}
             </Link>
@@ -133,7 +133,7 @@ export default function Header() {
           }`}
         >
           <div className="flex h-16 items-center justify-between border-b border-paper-line px-4 dark:border-navy-line">
-            <span className="text-[10px] font-semibold uppercase tracking-[3px] text-gold-ink dark:text-gold-light">
+            <span className="text-overline font-semibold uppercase tracking-[3px] text-gold-ink dark:text-gold-light">
               NXTLVL CLUB
             </span>
             <button

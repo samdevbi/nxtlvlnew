@@ -42,10 +42,10 @@ function BooksTab({ books }: { books: BooksData }) {
             <BookCard title={current.title} author={current.author} className="hover:translate-y-0" />
             <div>
               <h2 className="font-display text-2xl md:text-3xl">{current.title}</h2>
-              <p className="mt-1 text-[10px] font-semibold uppercase tracking-[2px] text-gold-ink dark:text-gold-light">
+              <p className="mt-1 text-overline font-semibold uppercase tracking-[2px] text-gold-ink dark:text-gold-light">
                 {current.author}
               </p>
-              <p className="mt-2.5 text-[13px] leading-relaxed text-inkc-sub dark:text-paper-line/80">
+              <p className="mt-2.5 text-detail leading-relaxed text-inkc-sub dark:text-paper-line/80">
                 {current.note[locale]}
               </p>
               <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-paper-line dark:bg-navy-line">
@@ -54,7 +54,7 @@ function BooksTab({ books }: { books: BooksData }) {
                   style={{ width: `${current.progressPercent}%` }}
                 />
               </div>
-              <p className="mt-2 text-[10px] font-semibold uppercase tracking-[2px] text-gold-ink dark:text-gold-light">
+              <p className="mt-2 text-overline font-semibold uppercase tracking-[2px] text-gold-ink dark:text-gold-light">
                 {current.progressPercent}% · {current.chapter}-{t("activities.chapter")} / {current.totalChapters}
               </p>
             </div>
@@ -113,10 +113,10 @@ function SportTab() {
                 <h3 className="text-base font-semibold">
                   {t(`activities.sportItems.${key}.title`)}
                 </h3>
-                <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-[2px] text-gold-ink dark:text-gold-light">
+                <p className="mt-0.5 text-overline font-semibold uppercase tracking-[2px] text-gold-ink dark:text-gold-light">
                   {t(`activities.sportItems.${key}.schedule`)}
                 </p>
-                <p className="mt-1 text-[13px] text-inkc-sub dark:text-paper-line/80">
+                <p className="mt-1 text-detail text-inkc-sub dark:text-paper-line/80">
                   {t(`activities.sportItems.${key}.note`)}
                 </p>
               </span>

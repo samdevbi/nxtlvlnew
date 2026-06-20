@@ -19,10 +19,10 @@ export default function MemberCard({ member }: { member: Member }) {
         />
       </div>
       <div className="shrink-0 px-3 py-3">
-        <h3 className="font-sans text-[15px] font-semibold leading-snug text-paper lg:text-base">
+        <h3 className="font-sans text-lead font-semibold leading-snug text-paper lg:text-base">
           {member.name}
         </h3>
-        <p className="mt-1.5 text-[9px] font-semibold uppercase leading-snug tracking-[2px] text-gold-light">
+        <p className="mt-1.5 text-overline font-semibold uppercase leading-snug tracking-[2px] text-gold-light">
           {member.role}
         </p>
       </div>

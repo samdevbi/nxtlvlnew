@@ -39,9 +39,9 @@ export default function MemberHeroCarousel({ members }: { members: Member[] }) {
       <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
         <div className={`flex min-h-[10rem] flex-col justify-center transition-opacity duration-300 lg:min-h-[18rem] ${visible ? "opacity-100" : "opacity-0"}`}>
           <Link href={`/members/${member.slug}`} className="group block">
-            <h2 className="font-display text-[2rem] leading-[1.12] text-inkc dark:text-paper md:text-5xl lg:text-[3.25rem]">
+            <h2 className="font-display text-[2.125rem] leading-[1.12] text-inkc dark:text-paper md:text-5xl lg:text-[3.5rem]">
               <span className="text-gold-ink dark:text-gold-light">{member.name}</span>
-              <span className="mt-3 block text-[1.35rem] font-medium leading-snug text-inkc-sub dark:text-paper-line/85 md:text-2xl lg:text-[1.65rem]">
+              <span className="mt-3 block text-[1.45rem] font-medium leading-snug text-inkc-sub dark:text-paper-line/85 md:text-2xl lg:text-[1.75rem]">
                 {member.role}
               </span>
             </h2>

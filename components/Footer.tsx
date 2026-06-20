@@ -52,14 +52,14 @@ export default function Footer() {
         {/* Logo + slogan */}
         <div>
           <Logo className="text-paper" />
-          <p className="mt-4 max-w-xs text-sm text-paper-line/80">
+          <p className="mt-4 max-w-xs text-base text-paper-line/80">
             {t("footer.slogan")}
           </p>
         </div>
 
         {/* Sahifalar */}
         <div>
-          <p className="flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[3px] text-gold-light">
+          <p className="flex items-center gap-2.5 text-overline font-semibold uppercase tracking-[3px] text-gold-light">
             <span aria-hidden className="h-px w-[18px] bg-gold" />
             {t("footer.pages")}
           </p>
@@ -68,7 +68,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-paper-line/80 transition-colors hover:text-gold-light"
+                className="text-base text-paper-line/80 transition-colors hover:text-gold-light"
               >
                 {t(link.key)}
               </Link>
@@ -78,11 +78,11 @@ export default function Footer() {
 
         {/* Kontakt */}
         <div>
-          <p className="flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[3px] text-gold-light">
+          <p className="flex items-center gap-2.5 text-overline font-semibold uppercase tracking-[3px] text-gold-light">
             <span aria-hidden className="h-px w-[18px] bg-gold" />
             {t("footer.contact")}
           </p>
-          <div className="mt-4 flex flex-col gap-2.5 text-sm">
+          <div className="mt-4 flex flex-col gap-2.5 text-base">
             <a href={`mailto:${settings.email}`} className="text-paper-line/80 transition-colors hover:text-gold-light">
               {settings.email}
             </a>
@@ -110,7 +110,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-navy-line">
-        <div className="mx-auto max-w-6xl px-4 py-5 text-xs text-paper-line/60 md:px-6">
+        <div className="mx-auto max-w-6xl px-4 py-5 text-sm text-paper-line/60 md:px-6">
           © {new Date().getFullYear()} NXTLVL CLUB. {t("footer.rights")}
         </div>
       </div>

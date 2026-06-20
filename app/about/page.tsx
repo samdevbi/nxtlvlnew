@@ -49,14 +49,14 @@ export default function About() {
         <section className="mx-auto max-w-6xl px-4 pb-10 pt-10 md:px-6 lg:pb-16 lg:pt-16">
           <Reveal>
             <SectionLabel>{t("about.hero.overline")}</SectionLabel>
-            <h1 className="mt-4 font-display text-[40px] leading-[1.05] md:text-6xl">
+            <h1 className="mt-4 font-display text-[2.75rem] leading-[1.05] md:text-6xl">
               {t("about.hero.titleStart")}
               <br />
               <span className="text-gold-ink dark:text-gold-light">
                 {t("about.hero.titleGold")}
               </span>
             </h1>
-            <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-inkc-sub dark:text-paper-line/90">
+            <p className="mt-5 max-w-xl text-lead leading-relaxed text-inkc-sub dark:text-paper-line/90">
               {t("about.hero.text")}
             </p>
           </Reveal>
@@ -66,7 +66,7 @@ export default function About() {
         <section className="mx-auto max-w-6xl px-4 pb-10 md:px-6 lg:pb-16">
           <Reveal>
             <CutCard variant="navy" className="p-7 lg:p-10">
-              <p className="flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[3px] text-gold-light">
+              <p className="flex items-center gap-2.5 text-overline font-semibold uppercase tracking-[3px] text-gold-light">
                 <span aria-hidden className="h-px w-[18px] bg-gold" />
                 {t("about.mission.overline")}
               </p>
@@ -95,7 +95,7 @@ export default function About() {
                     <h3 className="font-sans text-base font-semibold">
                       {t(`about.values.items.${key}.title`)}
                     </h3>
-                    <p className="mt-1 text-[13px] leading-snug text-inkc-sub dark:text-paper-line/80">
+                    <p className="mt-1 text-detail leading-snug text-inkc-sub dark:text-paper-line/80">
                       {t(`about.values.items.${key}.text`)}
                     </p>
                   </span>
@@ -144,7 +144,7 @@ export default function About() {
                     <h3 className="font-sans text-base font-semibold">
                       {t(`about.format.steps.${key}.title`)}
                     </h3>
-                    <p className="mt-1 text-[13px] leading-snug text-inkc-sub dark:text-paper-line/80">
+                    <p className="mt-1 text-detail leading-snug text-inkc-sub dark:text-paper-line/80">
                       {t(`about.format.steps.${key}.text`)}
                     </p>
                   </span>
@@ -164,7 +164,7 @@ export default function About() {
           <ul className="mt-6 grid gap-3.5 md:grid-cols-2 md:gap-x-12">
             {RULE_KEYS.map((key, i) => (
               <Reveal key={key} delay={i * 60}>
-                <li className="flex items-start gap-3 text-[15px] leading-relaxed">
+                <li className="flex items-start gap-3 text-lead leading-relaxed">
                   <svg
                     viewBox="0 0 24 24"
                     className="mt-0.5 h-5 w-5 shrink-0 text-gold-ink dark:text-gold-light"

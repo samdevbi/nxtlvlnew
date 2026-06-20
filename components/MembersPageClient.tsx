@@ -23,7 +23,7 @@ export default function MembersPageClient({ members }: { members: Member[] }) {
       <MemberHeroCarousel members={members} />
       <section className="pb-4 pt-6">
         <Reveal>
-          <p className="max-w-md text-[15px] leading-relaxed text-inkc-sub dark:text-paper-line/90">
+          <p className="max-w-md text-lead leading-relaxed text-inkc-sub dark:text-paper-line/90">
             {t("members.subtitle")}
           </p>
         </Reveal>

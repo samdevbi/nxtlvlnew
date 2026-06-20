@@ -26,7 +26,7 @@ export default function MeetingsPageClient({
           <h1 className="mt-4 font-display text-5xl first-letter:text-gold-ink dark:first-letter:text-gold-light md:text-6xl">
             {t("meetings.title")}
           </h1>
-          <p className="mt-3 max-w-md text-[15px] leading-relaxed text-inkc-sub dark:text-paper-line/90">
+          <p className="mt-3 max-w-md text-lead leading-relaxed text-inkc-sub dark:text-paper-line/90">
             {t("meetings.subtitle")}
           </p>
         </Reveal>
@@ -36,7 +36,7 @@ export default function MeetingsPageClient({
         <section className="pb-10 lg:pb-16">
           <Reveal>
             <CutCard variant="navy" className="max-w-2xl p-6 lg:p-8">
-              <p className="text-[10px] font-semibold uppercase tracking-[3px] text-gold-light">{t("meetings.next")}</p>
+              <p className="text-overline font-semibold uppercase tracking-[3px] text-gold-light">{t("meetings.next")}</p>
               <h2 className="mt-3 font-display text-3xl text-paper">{nextMeeting.title}</h2>
               <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm text-paper-line/90">
                 <span className="flex items-center gap-2">
