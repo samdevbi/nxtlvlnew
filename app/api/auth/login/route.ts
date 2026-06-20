@@ -2,6 +2,8 @@ import { NextRequest } from "next/server";
 import { authenticateAdmin, setAuthCookie } from "@/lib/auth";
 import { jsonOk, jsonError } from "@/lib/api-utils";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(req: NextRequest) {
   try {
     const { email, password } = await req.json();

@@ -2,16 +2,36 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { adminFetch } from "@/lib/admin-client";
 
 type Member = { slug: string; name: string; role: string; initials: string };
 
 export default function AdminMembersPage() {
   const [members, setMembers] = useState<Member[]>([]);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("/api/admin/members")
-      .then((r) => r.json())
-      .then(setMembers);
+    adminFetch<Member[]>("/api/admin/members")
+      .then(setMembers)
+      .catch((e) => {
+        // #region agent log
+        fetch("http://127.0.0.1:7793/ingest/dadbd1c7-7069-4b26-b7fc-f993d02028f8", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "0951d4" },
+          body: JSON.stringify({
+            sessionId: "0951d4",
+            runId: "pre-fix",
+            hypothesisId: "A",
+            location: "app/admin/members/page.tsx",
+            message: "members fetch failed",
+            data: { error: e instanceof Error ? e.message : "unknown" },
+            timestamp: Date.now(),
+          }),
+        }).catch(() => {});
+        // #endregion
+        setError(e instanceof Error ? e.message : "Yuklash xatosi");
+        setMembers([]);
+      });
   }, []);
 
   const remove = async (slug: string) => {
@@ -31,6 +51,7 @@ export default function AdminMembersPage() {
           + Yangi
         </Link>
       </div>
+      {error && <p className="mt-4 text-sm text-red-400">{error}</p>}
       <div className="mt-6 space-y-2">
         {members.map((m) => (
           <div
@@ -58,6 +79,7 @@ export default function AdminMembersPage() {
             </div>
           </div>
         ))}
+        {!error && members.length === 0 && <p className="text-paper-line">A&apos;zolar yo&apos;q</p>}
       </div>
     </div>
   );

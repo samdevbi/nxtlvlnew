@@ -4,6 +4,8 @@ import { Meeting } from "@/lib/db/models";
 import { jsonOk, jsonError, revalidatePublic } from "@/lib/api-utils";
 import { withAdmin } from "@/lib/admin-api";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(_req: Request, { params }: { params: { slug: string } }) {
   return withAdmin(async () => {
     await connectDB();

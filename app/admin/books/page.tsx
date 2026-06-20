@@ -1,35 +1,65 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import BooksForm, { booksFromApi, emptyBooksForm, type BooksFormData } from "@/components/admin/BooksForm";
+import { SaveBar } from "@/components/admin/FormFields";
+import { adminFetch, normalizeLocalized } from "@/lib/admin-client";
+
+function booksToApi(data: BooksFormData) {
+  return {
+    current: { ...data.current, note: normalizeLocalized(data.current.note) },
+    finishedCount: data.finishedCount,
+    finished: data.finished.filter((b) => b.title.trim() || b.author.trim()),
+  };
+}
 
 export default function AdminBooksPage() {
-  const [json, setJson] = useState("");
+  const [data, setData] = useState<BooksFormData>(emptyBooksForm);
   const [msg, setMsg] = useState("");
+  const [error, setError] = useState("");
+  const [loadError, setLoadError] = useState("");
 
   useEffect(() => {
-    fetch("/api/admin/books").then((r) => r.json()).then((d) => {
-      const { _id, __v, singleton, createdAt, updatedAt, ...rest } = d;
-      setJson(JSON.stringify(rest, null, 2));
-    });
+    adminFetch<Record<string, unknown>>("/api/admin/books")
+      .then((d) => {
+        const { _id, __v, singleton, createdAt, updatedAt, ...rest } = d as Record<string, unknown> & {
+          _id?: unknown;
+          __v?: unknown;
+          singleton?: unknown;
+          createdAt?: unknown;
+          updatedAt?: unknown;
+        };
+        setData(booksFromApi(rest));
+      })
+      .catch((e) => setLoadError(e instanceof Error ? e.message : "Yuklash xatosi"));
   }, []);
 
   const save = async () => {
-    const body = JSON.parse(json);
-    const res = await fetch("/api/admin/books", {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-    });
-    setMsg(res.ok ? "Saqlandi!" : "Xato");
+    setError("");
+    setMsg("");
+    try {
+      await adminFetch("/api/admin/books", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(booksToApi(data)),
+      });
+      setMsg("Saqlandi!");
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Xato");
+    }
   };
 
+  if (loadError) {
+    return <p className="text-red-400">{loadError}</p>;
+  }
+
   return (
-    <div className="max-w-3xl">
+    <div>
       <h1 className="font-display text-3xl text-gold-light">Kitoblar</h1>
-      <textarea value={json} onChange={(e) => setJson(e.target.value)} rows={20}
-        className="mt-4 w-full rounded-lg border border-navy-line bg-[#081426] px-3 py-2 font-mono text-xs text-paper" />
-      {msg && <p className="mt-2 text-sm text-gold-light">{msg}</p>}
-      <button type="button" onClick={save} className="mt-4 rounded-lg bg-gold px-6 py-2 text-sm font-semibold text-navy-deep">Saqlash</button>
+      <div className="mt-6">
+        <BooksForm data={data} onChange={setData} />
+      </div>
+      <SaveBar error={error} message={msg} onSave={save} />
     </div>
   );
 }

@@ -2,14 +2,21 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { adminFetch } from "@/lib/admin-client";
 
 type Meeting = { slug: string; title: string; type: string; number: number };
 
 export default function AdminMeetingsPage() {
   const [meetings, setMeetings] = useState<Meeting[]>([]);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("/api/admin/meetings").then((r) => r.json()).then(setMeetings);
+    adminFetch<Meeting[]>("/api/admin/meetings")
+      .then(setMeetings)
+      .catch((e) => {
+        setError(e instanceof Error ? e.message : "Yuklash xatosi");
+        setMeetings([]);
+      });
   }, []);
 
   const remove = async (slug: string) => {
@@ -26,6 +33,7 @@ export default function AdminMeetingsPage() {
           + Yangi
         </Link>
       </div>
+      {error && <p className="mt-4 text-sm text-red-400">{error}</p>}
       <div className="mt-6 space-y-2">
         {meetings.map((m) => (
           <div key={m.slug} className="flex items-center justify-between rounded-lg border border-navy-line bg-navy-card px-4 py-3">
@@ -39,6 +47,7 @@ export default function AdminMeetingsPage() {
             </div>
           </div>
         ))}
+        {!error && meetings.length === 0 && <p className="text-paper-line">Uchrashuvlar yo&apos;q</p>}
       </div>
     </div>
   );

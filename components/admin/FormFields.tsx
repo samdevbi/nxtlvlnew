@@ -1,0 +1,243 @@
+"use client";
+
+import type { ReactNode } from "react";
+
+const inputClass =
+  "mt-1 w-full rounded-lg border border-navy-line bg-[#081426] px-3 py-2 text-sm text-paper";
+const labelClass = "text-xs font-medium uppercase tracking-wider text-paper-line";
+
+export function AdminSection({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <section className="mt-8 rounded-xl border border-navy-line bg-navy-card/40 p-4">
+      <h2 className="font-display text-lg text-gold-light">{title}</h2>
+      <div className="mt-4 space-y-4">{children}</div>
+    </section>
+  );
+}
+
+export function AdminField({
+  label,
+  value,
+  onChange,
+  type = "text",
+  readOnly,
+}: {
+  label: string;
+  value: string | number;
+  onChange: (v: string) => void;
+  type?: string;
+  readOnly?: boolean;
+}) {
+  return (
+    <div>
+      <label className={labelClass}>{label}</label>
+      <input
+        type={type}
+        value={value}
+        readOnly={readOnly}
+        onChange={(e) => onChange(e.target.value)}
+        className={`${inputClass}${readOnly ? " opacity-60" : ""}`}
+      />
+    </div>
+  );
+}
+
+export function AdminTextarea({
+  label,
+  value,
+  onChange,
+  rows = 3,
+}: {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  rows?: number;
+}) {
+  return (
+    <div>
+      <label className={labelClass}>{label}</label>
+      <textarea
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        rows={rows}
+        className={inputClass}
+      />
+    </div>
+  );
+}
+
+export function AdminSelect({
+  label,
+  value,
+  onChange,
+  options,
+}: {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  options: { value: string; label: string }[];
+}) {
+  return (
+    <div>
+      <label className={labelClass}>{label}</label>
+      <select value={value} onChange={(e) => onChange(e.target.value)} className={inputClass}>
+        {options.map((o) => (
+          <option key={o.value} value={o.value}>
+            {o.label}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+}
+
+export type LocalizedValue = { uz: string; en: string };
+
+export function LocalizedField({
+  label,
+  value,
+  onChange,
+  multiline,
+}: {
+  label: string;
+  value: LocalizedValue;
+  onChange: (v: LocalizedValue) => void;
+  multiline?: boolean;
+}) {
+  return (
+    <div>
+      {label ? <p className={labelClass}>{label}</p> : null}
+      <div className={`grid gap-3 sm:grid-cols-2${label ? " mt-2" : ""}`}>
+        {multiline ? (
+          <>
+            <AdminTextarea label="O'zbekcha" value={value.uz} onChange={(uz) => onChange({ ...value, uz })} />
+            <AdminTextarea label="Inglizcha" value={value.en} onChange={(en) => onChange({ ...value, en })} />
+          </>
+        ) : (
+          <>
+            <AdminField label="O'zbekcha" value={value.uz} onChange={(uz) => onChange({ ...value, uz })} />
+            <AdminField label="Inglizcha" value={value.en} onChange={(en) => onChange({ ...value, en })} />
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export function StringListEditor({
+  label,
+  items,
+  onChange,
+  placeholder = "Qiymat",
+}: {
+  label: string;
+  items: string[];
+  onChange: (items: string[]) => void;
+  placeholder?: string;
+}) {
+  const update = (index: number, value: string) => {
+    onChange(items.map((item, i) => (i === index ? value : item)));
+  };
+
+  return (
+    <div>
+      <p className={labelClass}>{label}</p>
+      <div className="mt-2 space-y-2">
+        {items.map((item, i) => (
+          <div key={i} className="flex gap-2">
+            <input
+              value={item}
+              onChange={(e) => update(i, e.target.value)}
+              placeholder={placeholder}
+              className={inputClass}
+            />
+            <button
+              type="button"
+              onClick={() => onChange(items.filter((_, idx) => idx !== i))}
+              className="shrink-0 rounded-lg border border-red-400/40 px-3 text-xs text-red-300"
+            >
+              O&apos;chir
+            </button>
+          </div>
+        ))}
+        <button
+          type="button"
+          onClick={() => onChange([...items, ""])}
+          className="rounded-lg border border-navy-line px-3 py-1.5 text-xs text-gold-light hover:border-gold"
+        >
+          + Qo&apos;shish
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export function LocalizedListEditor({
+  label,
+  items,
+  onChange,
+}: {
+  label: string;
+  items: LocalizedValue[];
+  onChange: (items: LocalizedValue[]) => void;
+}) {
+  const update = (index: number, value: LocalizedValue) => {
+    onChange(items.map((item, i) => (i === index ? value : item)));
+  };
+
+  return (
+    <div>
+      <p className={labelClass}>{label}</p>
+      <div className="mt-2 space-y-3">
+        {items.map((item, i) => (
+          <div key={i} className="rounded-lg border border-navy-line/60 p-3">
+            <div className="mb-2 flex items-center justify-between">
+              <span className="text-xs text-paper-line">#{i + 1}</span>
+              <button
+                type="button"
+                onClick={() => onChange(items.filter((_, idx) => idx !== i))}
+                className="text-xs text-red-300"
+              >
+                O&apos;chir
+              </button>
+            </div>
+            <LocalizedField label="" value={item} onChange={(v) => update(i, v)} multiline />
+          </div>
+        ))}
+        <button
+          type="button"
+          onClick={() => onChange([...items, { uz: "", en: "" }])}
+          className="rounded-lg border border-navy-line px-3 py-1.5 text-xs text-gold-light hover:border-gold"
+        >
+          + Qo&apos;shish
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export function SaveBar({
+  error,
+  message,
+  onSave,
+  label = "Saqlash",
+}: {
+  error?: string;
+  message?: string;
+  onSave: () => void;
+  label?: string;
+}) {
+  return (
+    <div className="mt-8">
+      {error && <p className="mb-2 text-sm text-red-400">{error}</p>}
+      {message && <p className="mb-2 text-sm text-gold-light">{message}</p>}
+      <button
+        type="button"
+        onClick={onSave}
+        className="rounded-lg bg-gold px-6 py-2 text-sm font-semibold text-navy-deep"
+      >
+        {label}
+      </button>
+    </div>
+  );
+}

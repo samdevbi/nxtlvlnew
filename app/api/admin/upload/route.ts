@@ -3,6 +3,8 @@ import { uploadImage, isCloudinaryConfigured } from "@/lib/cloudinary";
 import { jsonOk, jsonError } from "@/lib/api-utils";
 import { withAdmin } from "@/lib/admin-api";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(req: NextRequest) {
   return withAdmin(async () => {
     if (!isCloudinaryConfigured()) {

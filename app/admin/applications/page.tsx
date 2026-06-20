@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { adminFetch } from "@/lib/admin-client";
 
 type App = {
   _id: string;
@@ -17,9 +18,15 @@ const STATUSES = ["new", "reviewed", "accepted", "rejected"];
 
 export default function AdminApplicationsPage() {
   const [apps, setApps] = useState<App[]>([]);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("/api/admin/applications").then((r) => r.json()).then(setApps);
+    adminFetch<App[]>("/api/admin/applications")
+      .then(setApps)
+      .catch((e) => {
+        setError(e instanceof Error ? e.message : "Yuklash xatosi");
+        setApps([]);
+      });
   }, []);
 
   const updateStatus = async (id: string, status: string) => {
@@ -34,6 +41,7 @@ export default function AdminApplicationsPage() {
   return (
     <div>
       <h1 className="font-display text-3xl text-gold-light">Arizalar</h1>
+      {error && <p className="mt-4 text-sm text-red-400">{error}</p>}
       <div className="mt-6 space-y-3">
         {apps.map((a) => (
           <div key={a._id} className="rounded-lg border border-navy-line bg-navy-card p-4">
@@ -56,7 +64,7 @@ export default function AdminApplicationsPage() {
             </div>
           </div>
         ))}
-        {apps.length === 0 && <p className="text-paper-line">Arizalar yo&apos;q</p>}
+        {!error && apps.length === 0 && <p className="text-paper-line">Arizalar yo&apos;q</p>}
       </div>
     </div>
   );

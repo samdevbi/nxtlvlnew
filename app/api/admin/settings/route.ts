@@ -4,6 +4,8 @@ import { SiteSettings } from "@/lib/db/models";
 import { jsonOk, revalidatePublic } from "@/lib/api-utils";
 import { withAdmin } from "@/lib/admin-api";
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   return withAdmin(async () => {
     await connectDB();

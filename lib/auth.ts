@@ -7,6 +7,13 @@ import { connectDB } from "@/lib/db/mongoose";
 const COOKIE_NAME = "nxtlvl_admin_token";
 const JWT_SECRET = process.env.JWT_SECRET || "dev-secret-change-me";
 
+function cookieSecure(): boolean {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
+  if (siteUrl.startsWith("https://")) return true;
+  if (process.env.COOKIE_SECURE === "true") return true;
+  return false;
+}
+
 export interface AdminPayload {
   adminId: string;
   email: string;
@@ -33,9 +40,25 @@ export function verifyToken(token: string): AdminPayload | null {
 }
 
 export function setAuthCookie(token: string): void {
+  const secure = cookieSecure();
+  // #region agent log
+  fetch("http://127.0.0.1:7793/ingest/dadbd1c7-7069-4b26-b7fc-f993d02028f8", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "0951d4" },
+    body: JSON.stringify({
+      sessionId: "0951d4",
+      runId: "post-fix",
+      hypothesisId: "A",
+      location: "lib/auth.ts:setAuthCookie",
+      message: "setting auth cookie",
+      data: { secure, siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "", nodeEnv: process.env.NODE_ENV },
+      timestamp: Date.now(),
+    }),
+  }).catch(() => {});
+  // #endregion
   cookies().set(COOKIE_NAME, token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure,
     sameSite: "lax",
     path: "/",
     maxAge: 60 * 60 * 24 * 7,
@@ -45,7 +68,7 @@ export function setAuthCookie(token: string): void {
 export function clearAuthCookie(): void {
   cookies().set(COOKIE_NAME, "", {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: cookieSecure(),
     sameSite: "lax",
     path: "/",
     maxAge: 0,
