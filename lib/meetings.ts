@@ -46,9 +46,3 @@ export const archiveMeetings: ArchiveMeeting[] = meetingsJson.archive;
 export function getArchiveMeeting(slug: string): ArchiveMeeting | undefined {
   return archiveMeetings.find((m) => m.slug === slug);
 }
-
-export {
-  fetchNextMeeting,
-  fetchArchiveMeetings,
-  fetchMeetingBySlug,
-} from "@/lib/data-server";

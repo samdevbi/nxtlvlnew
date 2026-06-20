@@ -1,6 +1,24 @@
-# Netlify Deploy
+# Deploy
 
-## Environment variables (Netlify → Site settings → Environment variables)
+## Hostinger VPS (tavsiya)
+
+To'liq yo'riqnoma: **[HOSTINGER.md](./HOSTINGER.md)**
+
+```bash
+ssh root@SERVER_IP
+git clone https://github.com/samdevbi/nxtlvlnew.git /var/www/nxtlvl
+cd /var/www/nxtlvl
+export DOMAIN=sizning-domen.uz
+bash deploy/setup-server.sh
+```
+
+Env tayyor: `deploy/env.production` → serverda `.env.local`
+
+---
+
+## Netlify
+
+### Environment variables (Netlify → Site settings → Environment variables)
 
 ```
 MONGODB_URI=mongodb+srv://...
@@ -13,25 +31,25 @@ CLOUDINARY_API_SECRET=...
 NEXT_PUBLIC_SITE_URL=https://your-site.netlify.app
 ```
 
-## MongoDB Atlas
+### MongoDB Atlas
 
-- **Network Access** → Allow `0.0.0.0/0` (yoki Netlify IP)
-- Database nomi: `WCarProd` yoki alohida `nxtlvl`
+- **Network Access** → Allow `0.0.0.0/0`
+- Database: `WCarProd`
 
-## Birinchi marta ma'lumot yuklash
-
-Lokalda (`.env.local` bilan):
+### Birinchi marta ma'lumot
 
 ```bash
 npm run seed
 ```
 
-## Admin panel
+### Admin
 
-- URL: `https://your-site.netlify.app/admin/login`
-- Default (seed): `admin@nxtlvl.uz` / `NxtlvlAdmin2026!` — **parolni o'zgartiring**
+- URL: `/admin/login`
+- Email: `admin@nxtlvl.uz`
+- Parol: seed dagi `ADMIN_PASSWORD`
+
+---
 
 ## Cloudinary
 
-Dashboard → Settings → API Keys → 3 ta qiymatni Netlify env ga qo'shing.
-Rasm yuklash admin panelda: A'zolar, Sozlamalar (hero).
+Dashboard → Settings → API Keys. Admin panelda: A'zolar, Sozlamalar (hero).
